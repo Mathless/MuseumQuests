@@ -14,6 +14,7 @@
         <activity android:name=".Question">
         </activity>
         <activity android:name=".QuestInfo">
+
         </activity>
         <activity android:name=".QuestList">
         </activity>
