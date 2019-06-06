@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout android:layout_height="match_parent"
+<LinearLayout xmlns:tools="http://schemas.android.com/tools"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_height="match_parent"
               android:layout_width="match_parent"
               android:orientation="vertical"
-              xmlns:tools= "http://schemas.android.com/tools"
-              xmlns:app = "http://schemas.android.com/apk/res-auto"
-              tools:context = ".Result"
-              xmlns:android="http://schemas.android.com/apk/res/android">
+              tools:context=".Result" android:backgroundTintMode="src_in"
+              android:backgroundTint="#8714C0" android:background="#E41C0F3D">
     <TextView android:layout_width="match_parent"
               android:layout_height="wrap_content"
               android:text="YOUR RESULT"
@@ -20,7 +21,7 @@
               android:id="@+id/textscore"
               android:layout_margin="50dp"
               android:textAlignment="center" android:textSize="24sp"
-              />
+    />
     <TextView android:layout_width="match_parent"
               android:layout_height="wrap_content"
               android:text="PLACE : 1"
@@ -29,8 +30,9 @@
     <Button android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="GO HOME"
-            android:layout_margin="10dp"
+            android:layout_margin="100dp"
             android:id="@+id/gotohomefromresult"
             android:layout_gravity="center_horizontal|center_vertical"
-            android:textSize="24sp"/>
+            android:textSize="24sp" android:autoText="false"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body2"/>
 </LinearLayout>
