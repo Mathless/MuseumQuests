@@ -26,8 +26,8 @@
               android:text="PLACE : 1"
               android:id="@+id/textplace" android:textAlignment="center" android:textSize="24sp"
     />
-    <Button android:layout_width="222dp"
-            android:layout_height="117dp"
+    <Button android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:text="GO HOME"
             android:layout_margin="100dp"
             android:id="@+id/gotohomefromresult" android:layout_gravity="center_horizontal|center_vertical"
