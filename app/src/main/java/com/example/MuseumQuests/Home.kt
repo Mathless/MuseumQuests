@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.widget.ArrayAdapter
+import android.widget.ListAdapter
 import kotlinx.android.synthetic.main.activity_home.*
 
 class Home : AppCompatActivity() {
@@ -22,7 +23,7 @@ class Home : AppCompatActivity() {
 
         val data = Array(2){i->("Quest" + "$i")}
         val adapter = ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, data)
-        listofquests.adapter = adapter
+        listofquests.adapter = adapter as ListAdapter?
 
     }
 }
