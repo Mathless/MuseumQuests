@@ -1,3 +1,14 @@
 <resources>
     <string name="app_name">MuseumQuests</string>
+    <string name="questname">Quest #1</string>
+    <string name="questinfo">Fusce sagittis tincidunt tellus nec lacinia. Integer lobortis nisi sit amet dolor ultricies
+        semper. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aenean suscipit
+        convallis dolor, in egestas velit pretium nec. Donec sit amet leo ligula. Maecenas eget pharetra velit. Integer
+        luctus, quam et fermentum auctor, massa libero tristique felis, nec mattis odio quam sed mi. Cras nec leo
+        condimentum, varius dui eget, sagittis orci. Sed scelerisque lacinia enim sit amet suscipit. Duis pharetra
+        aliquet nisi quis volutpat. Donec at justo sed massa luctus egestas. Duis vehicula nulla dapibus aliquam
+        finibus. Etiam sed semper dui, et condimentum magna. Pellentesque et enim quis diam ultricies laoreet. Ut nec
+        est aliquet, consectetur odio vitae, porttitor nulla. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+    </string>
+    <string name="question">Question</string>
 </resources>

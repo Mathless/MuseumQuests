@@ -29,7 +29,8 @@
     <Button android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="GO HOME"
-            android:layout_margin="100dp"
-            android:id="@+id/gotohomefromresult" android:layout_gravity="center_horizontal|center_vertical"
+            android:layout_margin="10dp"
+            android:id="@+id/gotohomefromresult"
+            android:layout_gravity="center_horizontal|center_vertical"
             android:textSize="24sp"/>
 </LinearLayout>

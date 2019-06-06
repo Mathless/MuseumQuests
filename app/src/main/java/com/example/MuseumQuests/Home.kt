@@ -19,6 +19,7 @@ class Home : AppCompatActivity() {
             val intent = Intent(this, QuestList::class.java)
             startActivity(intent)
         }
+
         val data = Array(2){i->("Quest" + "$i")}
         val adapter = ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, data)
         listofquests.adapter = adapter
