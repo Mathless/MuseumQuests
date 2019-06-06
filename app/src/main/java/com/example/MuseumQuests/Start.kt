@@ -11,7 +11,7 @@ class Start : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_start)
         buttonStart.setOnClickListener{
-            val intent = Intent(this, QuestList::class.java)
+            val intent = Intent(this, Home::class.java)
             startActivity(intent)
         }
     }

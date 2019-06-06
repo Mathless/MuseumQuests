@@ -20,7 +20,7 @@ class QuestList : AppCompatActivity() {
             _, view, _, _ ->
             when {
                 (view as TextView).text.toString()[0] == '1' -> {
-                    val intent = Intent(this, Start::class.java)
+                    val intent = Intent(this, QuestInfo::class.java)
                     startActivity(intent)
                 }
             }
