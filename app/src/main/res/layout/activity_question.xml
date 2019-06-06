@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
+<android.support.constraint.ConstraintLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:tools="http://schemas.android.com/tools"
         xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -7,34 +7,4 @@
         android:layout_height="match_parent"
         tools:context=".Question">
 
-
-    <TextView
-            android:text="@string/question"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/text_question"
-            android:layout_centerHorizontal="true"/>
-    <ListView
-            android:layout_below="@id/text_question"
-            android:id="@+id/list_question"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_above="@id/text_question"/>
-    <RelativeLayout android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/button_layout"
-                    android:layout_alignParentBottom="true"
-    >
-        <Button
-                android:text="Skip"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/button_skip"/>
-        <Button
-                android:text="Check"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/button_check"
-                android:layout_alignParentEnd="true"/>
-    </RelativeLayout>
-</RelativeLayout>
+</android.support.constraint.ConstraintLayout>

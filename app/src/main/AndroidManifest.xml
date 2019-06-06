@@ -14,13 +14,14 @@
         <activity android:name=".Question">
         </activity>
         <activity android:name=".QuestInfo">
-
         </activity>
         <activity android:name=".QuestList">
         </activity>
         <activity android:name=".Home">
         </activity>
         <activity android:name=".MainActivity">
+        </activity>
+        <activity android:name=".Start">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
