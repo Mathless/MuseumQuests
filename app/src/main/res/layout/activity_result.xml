@@ -11,9 +11,8 @@
               android:text="YOUR RESULT"
               android:id="@+id/text1" android:textAlignment="center" android:textAllCaps="true"
               style="@android:style/Widget.Holo.TextView.SpinnerItem" android:textSize="36sp"
-              android:textStyle="bold" android:textDirection="firstStrongLtr" android:textIsSelectable="false"
-              android:layout_marginBottom="30dp" android:layout_marginRight="30dp" android:layout_marginLeft="30dp"
-              android:layout_marginStart="30dp" android:layout_margin="60dp"/>
+              android:textStyle="bold" android:textIsSelectable="false"
+              android:layout_margin="60dp"/>
     <TextView android:layout_width="match_parent"
               android:layout_height="wrap_content"
               android:text="SCORE : 54"
@@ -29,7 +28,8 @@
     <Button android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="GO HOME"
-            android:layout_margin="100dp"
-            android:id="@+id/gotohomefromresult" android:layout_gravity="center_horizontal|center_vertical"
+            android:layout_margin="10dp"
+            android:id="@+id/gotohomefromresult"
+            android:layout_gravity="center"
             android:textSize="24sp"/>
 </LinearLayout>
