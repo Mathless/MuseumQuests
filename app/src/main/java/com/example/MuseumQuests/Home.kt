@@ -22,7 +22,7 @@ class Home : AppCompatActivity() {
             startActivity(intent)
         }
 
-        val data = Array(4){i -> ("Quest" + "$i")}
+        val data = Array(5){i -> ("Quest" + "$i")}
         val adapter = ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, data)
         listofquests.adapter = adapter as ListAdapter?
 

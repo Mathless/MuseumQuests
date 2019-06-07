@@ -13,7 +13,11 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/text_question"
-            android:layout_centerHorizontal="true"/>
+            android:layout_centerHorizontal="true"
+            android:textColor="@color/material_redA400"
+            android:textSize="36sp"
+            android:layout_margin="20dp"
+            />
     <ListView
             android:layout_below="@id/text_question"
             android:id="@+id/list_question"
@@ -24,17 +28,17 @@
                     android:layout_height="wrap_content"
                     android:id="@+id/button_layout"
                     android:layout_alignParentBottom="true"
-    >
+                    android:layout_margin="30dp">
         <Button
                 android:text="Skip"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/button_skip"/>
+                android:id="@+id/button_skip" android:textSize="36sp"/>
         <Button
                 android:text="Check"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/button_check"
-                android:layout_alignParentEnd="true"/>
+                android:layout_alignParentEnd="true" android:textSize="36sp"/>
     </RelativeLayout>
 </RelativeLayout>

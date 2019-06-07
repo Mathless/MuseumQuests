@@ -2,63 +2,70 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
                 xmlns:app="http://schemas.android.com/apk/res-auto"
                 xmlns:tools="http://schemas.android.com/tools" android:layout_height="match_parent" android:layout_width="match_parent">
-
-<ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/scrollView">
-    <LinearLayout android:layout_height="match_parent"
-                  android:layout_width="match_parent"
+    <LinearLayout android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
                   android:orientation="vertical"
-                  tools:context = ".Home"
-    >
+                  android:id="@+id/llhome"
+                  android:layout_alignParentTop="true">
+
         <ImageView
                 android:layout_height="48dp"
                 android:layout_width="48dp"
+                android:layout_margin="10dp"
                 android:src="@drawable/ic_settings_black_24dp"/>
 
         <TextView android:layout_width="match_parent"
                   android:layout_height="wrap_content"
                   android:text="HOME"
-                  android:id="@+id/texthome" android:textAlignment="center" android:textAllCaps="true"
-                  style="@android:style/Widget.Holo.TextView.SpinnerItem" android:textSize="36sp"
-                  android:textStyle="bold"  android:textIsSelectable="false"
-                  android:layout_margin="40dp"/>
-
-
-            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
-                          android:orientation="vertical"/>
-
+                  android:id="@+id/texthome"
+                  android:textAlignment="center"
+                  android:textSize="40sp"
+                  android:textStyle="bold"
+                  android:layout_margin="20dp" android:textColor="@color/material_redA400"/>
         <TextView android:layout_width="match_parent"
                   android:layout_height="wrap_content"
                   android:text="SCORE : 54"
-                  android:id="@+id/textscorehome" android:textAlignment="center" android:textSize="24sp"
-                 />
+                  android:id="@+id/textscorehome"
+                  android:textAlignment="center"
+                  android:textSize="24sp"
+        />
         <TextView android:layout_width="match_parent"
                   android:layout_height="wrap_content"
                   android:text="PLACE : 1"
-                  android:id="@+id/textplacehome" android:textAlignment="center" android:textSize="24sp"
+                  android:id="@+id/textplacehome"
+                  android:textAlignment="center"
+                  android:textSize="24sp"
         />
         <TextView android:layout_width="match_parent"
                   android:layout_height="wrap_content"
                   android:text="DONE QUESTS"
-                  android:id="@+id/textplace" android:textAlignment="center" android:textSize="24sp"
-        />
-        <ListView android:layout_width="match_parent"
-                  android:layout_height="100dp"
-                  android:id="@+id/listofquests" android:scrollbars="none"
-                  android:scrollbarAlwaysDrawHorizontalTrack="false"/>
-
-
+                  android:id="@+id/textplace"
+                  android:textStyle="bold"
+                  android:textAlignment="center"
+                  android:textSize="30sp"
+                  android:textColor="@color/material_blueA700"/>
     </LinearLayout>
-</ScrollView>
-    <Button android:layout_width="match_parent"
+
+            <ListView android:layout_width="match_parent"
+                      android:layout_height="match_parent"
+                      android:layout_above="@id/gotoquestlist"
+                      android:layout_below="@id/llhome"
+                      android:id="@+id/listofquests"
+                      android:scrollbars="vertical"
+                      android:layout_margin="20dp
+"
+            />
+
+    <!--</ScrollView>-->
+
+    <Button android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="NEW"
-            android:layout_margin="10dp"
+            android:text="   NEW   "
             android:id="@+id/gotoquestlist"
             android:textSize="24sp"
-            android:layout_below="@id/scrollView"
-            android:gravity="center"/>
+            android:gravity="center"
+            android:layout_alignParentBottom="true"
+            android:layout_margin="20dp"
+            android:layout_centerHorizontal="true" android:textColor="@color/material_redA400"/>
 
 </RelativeLayout>
