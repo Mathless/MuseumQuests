@@ -21,7 +21,8 @@
                   android:textAlignment="center"
                   android:textSize="40sp"
                   android:textStyle="bold"
-                  android:layout_margin="20dp" android:textColor="@color/material_redA400"/>
+                  android:layout_margin="20dp"
+                  android:textColor="@color/black"/>
         <TextView android:layout_width="match_parent"
                   android:layout_height="wrap_content"
                   android:text="SCORE : 54"
@@ -43,7 +44,7 @@
                   android:textStyle="bold"
                   android:textAlignment="center"
                   android:textSize="30sp"
-                  android:textColor="@color/material_blueA700"/>
+                  android:textColor="@color/black"/>
     </LinearLayout>
 
             <ListView android:layout_width="match_parent"
@@ -52,8 +53,7 @@
                       android:layout_below="@id/llhome"
                       android:id="@+id/listofquests"
                       android:scrollbars="vertical"
-                      android:layout_margin="20dp
-"
+                      android:layout_margin="20dp"
             />
 
     <!--</ScrollView>-->
@@ -66,6 +66,6 @@
             android:gravity="center"
             android:layout_alignParentBottom="true"
             android:layout_margin="20dp"
-            android:layout_centerHorizontal="true" android:textColor="@color/material_redA400"/>
+            android:layout_centerHorizontal="true" android:textColor="@color/black"/>
 
 </RelativeLayout>

@@ -14,7 +14,7 @@
             android:layout_height="wrap_content"
             android:id="@+id/text_question"
             android:layout_centerHorizontal="true"
-            android:textColor="@color/material_redA400"
+            android:textColor="@color/black"
             android:textSize="36sp"
             android:layout_margin="20dp"
             />

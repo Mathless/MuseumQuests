@@ -22,7 +22,7 @@
               android:textSize="40sp"
               android:textStyle="bold"
               android:layout_below="@id/schquestinfo"
-              android:textColor="@color/material_redA400"
+              android:textColor="@color/black"
     />
     <TextView android:layout_width="match_parent"
               android:layout_height="wrap_content"
@@ -49,6 +49,6 @@
             android:textSize="24sp"
             android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true"
-            android:textColor="@color/material_redA400"
+            android:textColor="@color/black"
             android:layout_margin="20dp"/>
 </RelativeLayout>

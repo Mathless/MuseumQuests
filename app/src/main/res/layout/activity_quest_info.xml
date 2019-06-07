@@ -24,7 +24,7 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/text_questname"
                 android:layout_gravity="center"
-                android:textColor="@color/material_redA400"
+                android:textColor="@color/black"
                 android:textSize="36sp"
         />
         <TextView
@@ -33,7 +33,7 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/text_i"
                 android:layout_gravity="center"
-                android:textColor="@color/md_blueA400"
+                android:textColor="@color/black"
                 android:textSize="30sp"
 
         />
@@ -66,7 +66,7 @@
             android:id="@+id/button_start"
             android:layout_margin="10dp"
             android:layout_alignParentBottom="true"
-            android:textSize="24sp" android:textColor="@color/material_redA400" android:layout_marginTop="10dp"
+            android:textSize="24sp" android:textColor="@color/black" android:layout_marginTop="10dp"
             android:layout_marginStart="10dp" android:layout_marginEnd="10dp" android:layout_marginBottom="10dp"/>
 
 

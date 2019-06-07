@@ -7,4 +7,5 @@
     <color name="black">#000000</color>
     <color name="bordersColor">#D81B1B</color>
     <color name="startButtonColor">#F07070</color>
+    <color name="material_redA400">#00C50909</color>
 </resources>
