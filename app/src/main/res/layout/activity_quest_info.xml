@@ -19,7 +19,7 @@
                   android:layout_below="@id/schquestinfo"
                   android:layout_centerHorizontal="true">
         <TextView
-                android:text="@string/questname"
+                android:text=""
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/text_questname"
@@ -50,10 +50,11 @@
                       android:orientation="vertical">
 
             <TextView
-                    android:text="@string/questinfo"
+                    android:text=""
                     android:layout_width="match_parent"
                     android:layout_margin="20dp"
-                    android:layout_height="wrap_content" android:id="@+id/textView" android:textColor="@color/black"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/textView" android:textColor="@color/black"
                     android:textSize="24sp"/>
         </LinearLayout>
     </ScrollView>
