@@ -16,7 +16,7 @@ class QuestInfo : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_quest_info)
 
-        var rootRef = FirebaseDatabase.getInstance().getReference("museums/quests/quest 1/description")
+        var rootRef = FirebaseDatabase.getInstance().getReference("museums/quests/0/description")
         rootRef.addValueEventListener(object : ValueEventListener {
             override fun onCancelled(p0: DatabaseError) {
                 TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
@@ -28,7 +28,7 @@ class QuestInfo : AppCompatActivity() {
             }
         })
 
-        rootRef = FirebaseDatabase.getInstance().getReference("museums/quests/quest 1/title")
+        rootRef = FirebaseDatabase.getInstance().getReference("museums/quests/0/title")
         rootRef.addValueEventListener(object : ValueEventListener {
             override fun onCancelled(p0: DatabaseError) {
                 TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
