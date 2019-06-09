@@ -21,7 +21,7 @@ class QuestList : AppCompatActivity() {
             _, view, _, _ ->
                 val intent = Intent(this, QuestInfo::class.java)
                 val value : Int = ((view as TextView).text.toString()[0] - 1).toInt() - 48
-                intent.putExtra(QuestInfo.KEY_QUEST, value)
+                intent.putExtra(QuestInfo.KEY_QUEST_NUM, value)
                 startActivity(intent)
         }
     }
