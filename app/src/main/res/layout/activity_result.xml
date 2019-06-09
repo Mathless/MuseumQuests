@@ -6,22 +6,15 @@
               xmlns:app = "http://schemas.android.com/apk/res-auto"
               tools:context = ".Result"
               xmlns:android="http://schemas.android.com/apk/res/android">
-    <ImageView
-            android:layout_height="48dp"
-            android:layout_width="48dp"
-            android:layout_margin="20dp"
-            android:id="@+id/schquestinfo"
-            android:src="@drawable/ic_settings_black_24dp"
-            />
     <TextView android:layout_width="match_parent"
               android:layout_height="wrap_content"
               android:text="YOUR RESULT"
               android:id="@+id/text1"
+              android:layout_margin="16dp"
               android:textAlignment="center"
               style="@android:style/Widget.Holo.TextView.SpinnerItem"
               android:textSize="40sp"
               android:textStyle="bold"
-              android:layout_below="@id/schquestinfo"
               android:textColor="@color/black"
     />
     <TextView android:layout_width="match_parent"
@@ -41,7 +34,7 @@
               android:textAlignment="center"
               android:textSize="30sp"
     />
-    <Button android:layout_width="wrap_content"
+    <Button android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="GO HOME"
             android:id="@+id/gotohomefromresult"
@@ -50,5 +43,6 @@
             android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true"
             android:textColor="@color/black"
-            android:layout_margin="20dp"/>
+            android:background="@drawable/button_start"
+            android:layout_margin="24dp"/>
 </RelativeLayout>

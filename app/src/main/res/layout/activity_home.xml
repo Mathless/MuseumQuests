@@ -1,27 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                xmlns:app="http://schemas.android.com/apk/res-auto"
-                xmlns:tools="http://schemas.android.com/tools" android:layout_height="match_parent" android:layout_width="match_parent">
+                 android:layout_height="match_parent"
+                android:layout_width="match_parent"
+                >
     <LinearLayout android:layout_width="match_parent"
                   android:layout_height="wrap_content"
                   android:orientation="vertical"
                   android:id="@+id/llhome"
-                  android:layout_alignParentTop="true">
+                  android:layout_alignParentTop="true"
+                  android:gravity="center"
+                  android:padding="8dp">
 
-        <ImageView
-                android:layout_height="48dp"
-                android:layout_width="48dp"
-                android:layout_margin="10dp"
-                android:src="@drawable/ic_settings_black_24dp"/>
 
-        <TextView android:layout_width="match_parent"
+        <TextView android:layout_width="wrap_content"
                   android:layout_height="wrap_content"
                   android:text="HOME"
                   android:id="@+id/texthome"
-                  android:textAlignment="center"
                   android:textSize="40sp"
                   android:textStyle="bold"
-                  android:layout_margin="20dp"
                   android:textColor="@color/black"/>
         <TextView android:layout_width="match_parent"
                   android:layout_height="wrap_content"
@@ -37,9 +33,15 @@
                   android:textAlignment="center"
                   android:textSize="24sp"
         />
+        <Button android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="click to change language"
+                android:layout_marginVertical="8dp"
+                android:background="@drawable/change_language_button"
+        />
         <TextView android:layout_width="match_parent"
                   android:layout_height="wrap_content"
-                  android:text="DONE QUESTS"
+                  android:text="DONE QUESTS:"
                   android:id="@+id/textplace"
                   android:textStyle="bold"
                   android:textAlignment="center"
@@ -53,19 +55,21 @@
                       android:layout_below="@id/llhome"
                       android:id="@+id/listofquests"
                       android:scrollbars="vertical"
-                      android:layout_margin="20dp"
+                      android:layout_margin="8dp"
+                      android:background="@drawable/done_quests_list"
             />
 
     <!--</ScrollView>-->
 
-    <Button android:layout_width="wrap_content"
+    <Button android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="   NEW   "
+            android:text="Start new quest"
             android:id="@+id/gotoquestlist"
             android:textSize="24sp"
             android:gravity="center"
             android:layout_alignParentBottom="true"
-            android:layout_margin="20dp"
+            android:layout_margin="8dp"
+            android:background="@drawable/button_start"
             android:layout_centerHorizontal="true" android:textColor="@color/black"/>
 
 </RelativeLayout>
