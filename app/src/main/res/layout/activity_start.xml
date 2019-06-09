@@ -1,131 +1,46 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView
         xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent">
     <LinearLayout
-            xmlns:android="http://schemas.android.com/apk/res/android"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:gravity="center"
+            android:padding="16dp">
+        <TextView android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:text="Welcome to MuseumQuests"
+                    android:textSize="24sp"
+                    android:layout_margin="16dp"/>
+        <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="100dp"
+                android:id="@+id/imageView2"
+                android:src="@drawable/mueseum"/>
+        <Button android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="click to change language"
+                android:layout_marginVertical="8dp"
+                android:background="@drawable/change_language_button"
+        />
 
         <ImageView
-                android:layout_height="48dp"
-                android:layout_width="48dp"
-                android:src="@drawable/ic_settings_black_24dp"/>
-
-        <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="80dp"
-                android:gravity="center">
+                android:layout_height="40dp"
+                app:srcCompat="@android:drawable/screen_background_light_transparent" android:id="@+id/imageView3"/>
+        <TextView android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:gravity="start"
+                  android:text="Enter your Name"/>
+        <EditText android:layout_width="match_parent" android:layout_height="wrap_content"/>
 
-            <TextView
-                    android:layout_width="350dp"
-                    android:layout_height="match_parent"
-                    android:text="MUSEUM QUEST"
-                    android:textSize="30dp"
-                    android:shadowColor="@color/bordersColor"
-                    android:shadowDx="4"
-                    android:shadowDy="4"
-                    android:shadowRadius="4"
-                    android:textStyle="bold"
-                    android:textColor="@color/colorAppTitles"
-                    android:id="@+id/start_title"
-                    android:gravity="center"
-            />
-
-        </LinearLayout>
-
-        <View android:layout_width="match_parent" android:layout_height="50dp"/>
-
-        <LinearLayout
-                android:layout_width="300dp"
-                android:layout_height="70dp"
-                android:id="@+id/start_language_selection"
-                android:background="@drawable/borders_start"
-                android:layout_gravity="center"
-                android:gravity="center"
-                android:orientation="vertical">
-
-            <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Select Language: "
-                    android:textSize="20dp"
-                    android:textStyle="bold"
-                    android:shape="rectangle"
-                    android:textColor="@color/colorAppTitles"
-            />
-            <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content">
-                <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="ENG"
-                        android:textSize="20dp"
-                        android:textStyle="bold"
-                        android:shape="rectangle"
-                        android:textColor="@color/colorAppTitles"
-                        android:id="@+id/start_language_"
-                />
-                <ImageView
-                        android:layout_height="30dp"
-                        android:layout_width="30dp"
-                        android:src="@drawable/flag_gb"
-                        android:id="@+id/start_language_pic"
-                        android:layout_marginLeft="5dp"
-                />
-            </LinearLayout>
-        </LinearLayout>
-
-        <View android:layout_width="match_parent" android:layout_height="30dp"/>
-
-        <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="100dp"
-                android:gravity="center"
-                android:background="@drawable/borders_start"
-                android:orientation="vertical"
-                android:descendantFocusability="beforeDescendants"
-                android:focusableInTouchMode="true">
-
-            <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Your Name:"
-                    android:textSize="24dp"
-                    android:textStyle="bold"
-                    android:shape="rectangle"
-                    android:textColor="@color/colorAppTitles"
-                    android:id="@+id/start_name_title"
-            />
-
-            <EditText
-                    android:layout_width="200dp"
-                    android:layout_height="wrap_content"
-                    android:hint="Input your name"
-                    android:shape="rectangle"
-                    android:textColor="@color/colorAppTitles"
-                    android:id="@+id/start_name_input"
-                    android:focusable="true"
-            />
-
-
-        </LinearLayout>
-
-        <View android:layout_width="match_parent" android:layout_height="0dp"/>
-
-        <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:gravity="center"
-                android:orientation="vertical">
-            <Button android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:text="     Start     "
-                    android:textSize="25dp"
-                    android:textStyle="bold"
-                    android:id="@+id/buttonStart"
-                    android:backgroundTint="@color/startButtonColor"/>
-        </LinearLayout>
+        <Button android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:background="@drawable/button_start"
+                android:text="Sign in"
+                android:textColor="#FFFFFF"
+                android:id="@+id/buttonStart"/>
     </LinearLayout>
 </ScrollView>
