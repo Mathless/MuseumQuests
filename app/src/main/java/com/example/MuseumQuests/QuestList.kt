@@ -18,12 +18,10 @@ class QuestList : AppCompatActivity() {
 
         quest_list.setOnItemClickListener{
             _, view, _, _ ->
-            when {
-                (view as TextView).text.toString()[0] == '1' -> {
-                    val intent = Intent(this, QuestInfo::class.java)
-                    startActivity(intent)
-                }
-            }
+                val intent = Intent(this, QuestInfo::class.java)
+                val value : Int = ((view as TextView).text.toString()[0] - 1).toInt() - 48
+                intent.putExtra(QuestInfo.KEY_QUEST, value)
+                startActivity(intent)
         }
     }
 }
