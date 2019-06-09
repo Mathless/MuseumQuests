@@ -29,7 +29,7 @@ class Home : AppCompatActivity() {
 
         val data = Array(5){i -> ("Quest $i")}
         val adapter = ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, data)
-        listofquests.adapter = adapter
+        listofquests.adapter = adapter as ListAdapter?
 
     }
 }
