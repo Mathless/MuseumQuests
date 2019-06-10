@@ -6,26 +6,22 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context=".QuestInfo">
-    <ImageView
-            android:layout_height="48dp"
-            android:layout_width="48dp"
-            android:layout_margin="10dp"
-            android:id="@+id/schquestinfo"
-            android:src="@drawable/ic_settings_black_24dp"/>
-    <LinearLayout android:layout_width="wrap_content"
+
+    <LinearLayout android:layout_width="match_parent"
                   android:layout_height="wrap_content"
                   android:orientation="vertical"
                   android:id="@+id/llinfo"
-                  android:layout_below="@id/schquestinfo"
-                  android:layout_centerHorizontal="true">
+                    android:gravity="center">
         <TextView
-                android:text=""
+                android:text="Quest name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/text_questname"
                 android:layout_gravity="center"
                 android:textColor="@color/black"
                 android:textSize="36sp"
+                android:textStyle="bold"
+
         />
         <TextView
                 android:text="INFO:"
@@ -34,7 +30,8 @@
                 android:id="@+id/text_i"
                 android:layout_gravity="center"
                 android:textColor="@color/black"
-                android:textSize="30sp"
+                android:textSize="24sp"
+                android:textStyle="italic"
 
         />
 
@@ -46,26 +43,28 @@
             android:layout_above="@id/button_start"
             android:layout_below="@id/llinfo"
             >
-        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
-                      android:orientation="vertical">
 
             <TextView
                     android:text=""
+                    android:background="@drawable/done_quests_list"
                     android:layout_width="match_parent"
-                    android:layout_margin="20dp"
+                    android:layout_margin="12dp"
+                    android:padding="8dp"
+
                     android:layout_height="wrap_content"
                     android:id="@+id/textView" android:textColor="@color/black"
                     android:textSize="24sp"/>
-        </LinearLayout>
+
     </ScrollView>
     <Button
             android:text="Start"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
             android:layout_gravity="center_horizontal"
             android:id="@+id/button_start"
-            android:layout_margin="10dp"
+            android:layout_margin="16dp"
+            android:background="@drawable/button_start"
             android:layout_alignParentBottom="true"
             android:textSize="24sp" android:textColor="@color/black" android:layout_marginTop="10dp"
             android:layout_marginStart="10dp" android:layout_marginEnd="10dp" android:layout_marginBottom="10dp"/>
