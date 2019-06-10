@@ -31,8 +31,8 @@ class Question : AppCompatActivity() {
 
 
         setValByPath("museums/quests/$i/questions/$j/question", text_question)
-        setValToListByPath("museums/quests/0/questions/0/answers_options/", 0, this)
 
+        setValToListByPath("museums/quests/0/questions/0/answers_options/", 0, this)
 
         //Проверка вопроса или переход на окно результата
         button_check.setOnClickListener{

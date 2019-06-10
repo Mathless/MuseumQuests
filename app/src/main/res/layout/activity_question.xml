@@ -13,13 +13,16 @@
             android:id="@+id/text_question"
             android:layout_centerHorizontal="true"
             android:textColor="@color/black"
-            android:textSize="36sp"
-            android:layout_margin="24dp"
+            android:textSize="24sp"
+            android:layout_margin="8dp"
+            android:gravity="center"
+
             />
     <ListView
+            android:layout_above="@id/button_layout"
             android:layout_margin="8dp"
             android:layout_below="@id/text_question"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/text_list"
             android:textColor="@color/black"
