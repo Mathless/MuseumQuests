@@ -17,6 +17,7 @@ class QuestInfo : AppCompatActivity() {
     companion object {
         const val KEY_QUEST_NUM = "key_to_quest"
         const val KEY_QUESTION_NUM = "key_to_question"
+        var totalPoints = 0
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
