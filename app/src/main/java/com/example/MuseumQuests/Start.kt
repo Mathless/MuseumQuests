@@ -60,6 +60,8 @@ class Start : AppCompatActivity() {
                                 val post1 = p1.getValue(String::class.java).toString()
                                 if (post1 == password)
                                     startActivity(intent)
+                                else
+                                    showToastWrongData()
                             }
                         })
                     } else
@@ -72,7 +74,7 @@ class Start : AppCompatActivity() {
     }
 
     fun showToastWrongData(){
-        var toast : Toast = Toast.makeText(getApplicationContext(),
+        val toast : Toast = Toast.makeText(getApplicationContext(),
         "Wrong username or password!",
         Toast.LENGTH_SHORT)
         toast.show()
