@@ -7,7 +7,7 @@
         tools:context=".Question">
 
     <TextView
-            android:text="@string/question"
+            android:text="Question123"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/text_question"
@@ -18,21 +18,12 @@
             />
     <ListView
             android:layout_margin="8dp"
-
             android:layout_below="@id/text_question"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/text_option1"
+            android:id="@+id/text_list"
             android:textColor="@color/black"
     />
-    <TextView
-            android:text="Question OPTION"
-            android:layout_below="@id/text_option1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-
-            android:background="@drawable/done_quests_list"
-            android:layout_above="@id/button_layout"/>
     <RelativeLayout android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:id="@+id/button_layout"
