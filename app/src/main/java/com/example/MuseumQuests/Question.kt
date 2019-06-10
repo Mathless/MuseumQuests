@@ -5,6 +5,7 @@ import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ArrayAdapter
+import android.widget.ListAdapter
 import android.widget.TextView
 import com.example.MuseumQuests.QuestInfo.Companion.totalPoints
 import com.google.firebase.database.DataSnapshot
@@ -32,7 +33,11 @@ class Question : AppCompatActivity() {
 
         text_list.setOnItemClickListener{
                 _, view, _, _ ->
+            // все color.white плз
+            for(i in 0..3)
+                text_list.getChildAt(i).setBackgroundResource(R.drawable.rectangle)
             val value = (view as TextView).text.toString()
+            view.setBackgroundResource(R.drawable.done_quests_list)
             answerGiven = value
         }
 
@@ -91,7 +96,7 @@ class Question : AppCompatActivity() {
                 val post = p0.getValue(String::class.java)
                 if (post == null) {
                     val adapter = ArrayAdapter<String>(ctx, android.R.layout.simple_list_item_1, dataArray)
-                    text_list.adapter = adapter
+                    text_list.adapter = adapter as ListAdapter
                     return
                 }
                 dataArray[i] = post.toString()
