@@ -13,26 +13,29 @@
             android:id="@+id/text_question"
             android:layout_centerHorizontal="true"
             android:textColor="@color/black"
-            android:textSize="36sp"
-            android:layout_margin="24dp"
+            android:textSize="24sp"
+            android:layout_margin="8dp"
+            android:gravity="center"
+
             />
     <ListView
+            android:layout_above="@id/button_layout"
             android:layout_margin="8dp"
 
             android:layout_below="@id/text_question"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/text_option1"
             android:textColor="@color/black"
     />
-    <TextView
-            android:text="Question OPTION"
-            android:layout_below="@id/text_option1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-
-            android:background="@drawable/done_quests_list"
-            android:layout_above="@id/button_layout"/>
+    <!--<TextView-->
+            <!--android:text="Question OPTION"-->
+            <!--android:layout_below="@id/text_option1"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:gravity="center"-->
+            <!--android:background="@drawable/done_quests_list"-->
+            <!--android:layout_above="@id/button_layout"/>-->
     <RelativeLayout android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:id="@+id/button_layout"

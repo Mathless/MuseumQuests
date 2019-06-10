@@ -49,15 +49,15 @@
                   android:textColor="@color/black"/>
     </LinearLayout>
 
-            <ListView android:layout_width="match_parent"
-                      android:layout_height="match_parent"
-                      android:layout_above="@id/gotoquestlist"
-                      android:layout_below="@id/llhome"
-                      android:id="@+id/listofquests"
-                      android:scrollbars="vertical"
-                      android:layout_margin="8dp"
-                      android:background="@drawable/done_quests_list"
-            />
+    <ListView android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:layout_above="@id/gotoquestlist"
+              android:layout_below="@id/llhome"
+              android:id="@+id/listofquests"
+              android:scrollbars="vertical"
+              android:background="@drawable/done_quests_list"
+              android:layout_centerHorizontal="false" android:layout_marginTop="8dp" android:layout_marginStart="8dp"
+              android:layout_marginEnd="8dp" android:layout_marginBottom="8dp"/>
 
     <!--</ScrollView>-->
 

@@ -28,8 +28,6 @@ class Question : AppCompatActivity() {
         list_question.adapter = adapter */
 
         setValByPath("museums/quests/$i/questions/$j/question", text_question)
-        setValByPath("museums/quests/$i/questions/$j/answers_options/0", text_option1)
-        setValByPath("museums/quests/$i/questions/$j/answers_options/1", text_option2)
 
         //Проверка вопроса или переход на окно результата
         button_check.setOnClickListener{
