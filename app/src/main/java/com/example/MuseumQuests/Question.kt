@@ -10,6 +10,7 @@ import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
+import kotlinx.android.synthetic.main.activity_quest_info.*
 import kotlinx.android.synthetic.main.activity_quest_list.*
 import kotlinx.android.synthetic.main.activity_question.*
 import org.w3c.dom.Text
@@ -22,12 +23,16 @@ class Question : AppCompatActivity() {
 
         val i = intent.getIntExtra(QuestInfo.KEY_QUEST_NUM, 0)
         val j = intent.getIntExtra(QuestInfo.KEY_QUESTION_NUM, 0)
-        /** //Сами вопросы !!!!!! пока что ничего не отображается - не знаю, что с этим делать
+        //Сами вопросы !!!!!! пока что ничего не отображается - не знаю, что с этим делать
+
         val dataArray = Array<String>(3){i -> "${i + 1}. Quest #${i + 1}"}
         val adapter = ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, dataArray)
-        list_question.adapter = adapter */
+        text_list.adapter = adapter
+
 
         setValByPath("museums/quests/$i/questions/$j/question", text_question)
+
+        setValToListByPath("museums/quests/0/questions/0/answers_options/", 0, this)
 
         //Проверка вопроса или переход на окно результата
         button_check.setOnClickListener{
@@ -72,5 +77,29 @@ class Question : AppCompatActivity() {
         return Intent(this, Question::class.java)
     }
 
+    val dataArray = Array<String>(4){_ -> "_"}
+
+    fun setValToListByPath (path: String, i : Int, ctx : Context)
+    {
+        val rootRef = FirebaseDatabase.getInstance().getReference("$path$i")
+        rootRef.addValueEventListener(object : ValueEventListener {
+            override fun onCancelled(p0: DatabaseError) {
+                println("not implemented")
+            }
+            override fun onDataChange(p0: DataSnapshot) {
+                val post = p0.getValue(String::class.java)
+                if (post == null) {
+                    val adapter = ArrayAdapter<String>(ctx, android.R.layout.simple_list_item_1, dataArray)
+                    text_list.adapter = adapter
+                    return
+                }
+                dataArray[i] = post.toString()
+                setValToListByPath (path, i + 1, ctx)
+            }
+        })
+    }
+
 }
+
+
 
