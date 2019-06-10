@@ -17,6 +17,8 @@ class QuestInfo : AppCompatActivity() {
     companion object {
         const val KEY_QUEST_NUM = "key_to_quest"
         const val KEY_QUESTION_NUM = "key_to_question"
+        var username_current :String = ""
+        var id_current : Int = -1
         var totalPoints = 0
     }
 

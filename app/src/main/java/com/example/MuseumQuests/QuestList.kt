@@ -47,11 +47,10 @@ class QuestList : AppCompatActivity() {
 
                     for(k in 0..99999)
                         if (dataArray[k] != "_") {
-                            dataArrayToGo+=dataArray[k]
-
+                            dataArrayToGo += dataArray[k]
                         }
                     val adapter = ArrayAdapter<String>(ctx, android.R.layout.simple_list_item_1, dataArrayToGo)
-                    quest_list.adapter = adapter as ListAdapter
+                    quest_list.adapter = adapter as ListAdapter?
                     return
                 }
                 dataArray[i] = post.toString()
