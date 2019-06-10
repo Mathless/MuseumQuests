@@ -12,10 +12,7 @@ import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
-import kotlinx.android.synthetic.main.activity_quest_info.*
-import kotlinx.android.synthetic.main.activity_quest_list.*
 import kotlinx.android.synthetic.main.activity_question.*
-import org.w3c.dom.Text
 
 class Question : AppCompatActivity() {
 
@@ -43,8 +40,13 @@ class Question : AppCompatActivity() {
 
         //Проверка вопроса или переход на окно результата
         button_check.setOnClickListener{
-            checkAnswer(answerGiven, 10, "museums/quests/$i/questions/$j/correct_answer")
-            checkWhereToGo(i, j)
+            if (answerGiven == " ")
+                for(i in 0..3)
+                    text_list.getChildAt(i).setBackgroundResource(R.drawable.rectangle_warning)
+            else {
+                checkAnswer(answerGiven, 10, "museums/quests/$i/questions/$j/correct_answer")
+                checkWhereToGo(i, j)
+            }
         }
 
         // Конпка скипа вопроса

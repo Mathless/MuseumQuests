@@ -22,11 +22,28 @@ class Result : AppCompatActivity() {
         setContentView(R.layout.activity_result)
         textscore.text = "Score : $totalPoints"
 
+        setScore()
+
         Log.d(logTag, "onCreate called")
         gotohomefromresult.setOnClickListener {
             val intent = Intent(this, Home::class.java)
             startActivity(intent)
 
         }
+    }
+
+    fun setScore(){
+        val rootRef1 = FirebaseDatabase.getInstance().getReference("people/$id_current/pointsEarned")
+        rootRef1.addListenerForSingleValueEvent(object : ValueEventListener {
+            override fun onCancelled(p0: DatabaseError) {
+                println("not implemented")
+            }
+            override fun onDataChange(p0: DataSnapshot) {
+                val post = p0.getValue(String::class.java).toString()
+                var allPoints = totalPoints + post.toInt()
+                val ref = FirebaseDatabase.getInstance().getReference("people/$id_current/pointsEarned")
+                ref.setValue("$allPoints")
+            }
+        })
     }
 }

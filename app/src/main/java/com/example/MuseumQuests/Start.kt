@@ -4,6 +4,7 @@ import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.util.DisplayMetrics
+import android.view.Gravity
 import android.widget.ArrayAdapter
 import android.widget.ListAdapter
 import android.widget.TextView
@@ -17,6 +18,7 @@ import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
 import kotlinx.android.synthetic.main.activity_question.*
 import kotlinx.android.synthetic.main.activity_start.*
+import android.widget.RelativeLayout
 
 class Start : AppCompatActivity() {
 
@@ -32,11 +34,12 @@ class Start : AppCompatActivity() {
             id_current = -1
             val intent = Intent(this, Home::class.java)
             username_current = username.text.toString()
-            findPerson(0, username_current, intent)
+            val password = password.text.toString()
+            findPerson(0, username_current, password, intent) // check the input data
         }
     }
 
-    fun findPerson (i : Int, username : String, intent : Intent) {
+    fun findPerson (i : Int, username : String, password : String, intent : Intent) {
         val rootRef = FirebaseDatabase.getInstance().getReference("people/$i/username")
         rootRef.addValueEventListener(object : ValueEventListener {
             override fun onCancelled(p0: DatabaseError) {
@@ -47,11 +50,31 @@ class Start : AppCompatActivity() {
                 if (post != "null") {
                     if (post == username) {
                         id_current = i
-                        startActivity(intent)
+
+                        val rootRefPass = FirebaseDatabase.getInstance().getReference("people/$id_current/verification_code")
+                        rootRefPass.addValueEventListener(object : ValueEventListener {
+                            override fun onCancelled(p1: DatabaseError) {
+                                println("not implemented")
+                            }
+                            override fun onDataChange(p1: DataSnapshot) {
+                                val post1 = p1.getValue(String::class.java).toString()
+                                if (post1 == password)
+                                    startActivity(intent)
+                            }
+                        })
                     } else
-                        findPerson(i + 1, username_current, intent)
+                        findPerson(i + 1, username_current, password, intent)
                 }
+                else
+                    showToastWrongData()
             }
         })
+    }
+
+    fun showToastWrongData(){
+        var toast : Toast = Toast.makeText(getApplicationContext(),
+        "Wrong username or password!",
+        Toast.LENGTH_SHORT)
+        toast.show()
     }
 }

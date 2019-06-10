@@ -8,6 +8,8 @@ import android.util.Log
 import android.widget.ArrayAdapter
 import android.widget.ListAdapter
 import android.widget.TextView
+import com.example.MuseumQuests.QuestInfo.Companion.id_current
+import com.example.MuseumQuests.QuestInfo.Companion.username_current
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
@@ -16,10 +18,16 @@ import kotlinx.android.synthetic.main.activity_home.*
 
 class Home : AppCompatActivity() {
     val logTag = "DEMO_TAG"
-
+    var score = 0
+    var place = 1
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
+
+        checkScore()
+        checkPlace(id_current)
+
+        username.text = "username: $username_current"
 
         Log.d(logTag, "onCreate called")
         gotoquestlist.setOnClickListener {
@@ -30,7 +38,40 @@ class Home : AppCompatActivity() {
         val data = Array(5){i -> ("Quest $i")}
         val adapter = ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, data)
         listofquests.adapter = adapter as ListAdapter?
+    }
 
+    fun checkScore(){
+        val rootRef1 = FirebaseDatabase.getInstance().getReference("people/$id_current/pointsEarned")
+        rootRef1.addValueEventListener(object : ValueEventListener {
+            override fun onCancelled(p0: DatabaseError) {
+                println("not implemented")
+            }
+            override fun onDataChange(p0: DataSnapshot) {
+                val post = p0.getValue(String::class.java).toString()
+                textscorehome.text = "SCORE : $post"
+                score = post.toInt()
+            }
+        })
+    }
+
+    fun checkPlace(id : Int){
+        val rootRef1 = FirebaseDatabase.getInstance().getReference("people/$id/pointsEarned")
+        rootRef1.addValueEventListener(object : ValueEventListener {
+            override fun onCancelled(p0: DatabaseError) {
+                println("not implemented")
+            }
+            override fun onDataChange(p0: DataSnapshot) {
+                val post = p0.getValue(String::class.java)
+                println(post)
+                if (post == null)
+                    textplacehome.text = "PLACE : $place"
+                else {
+                    if (post.toInt() > score)
+                        place++
+                    checkPlace(id + 1)
+                }
+            }
+        })
     }
 }
 
@@ -47,3 +88,4 @@ fun setValByPath (path: String, textWindowId : TextView)
         }
     })
 }
+
