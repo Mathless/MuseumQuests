@@ -37,6 +37,13 @@ class Start : AppCompatActivity() {
             val password = password.text.toString()
             findPerson(0, username_current, password, intent) // check the input data
         }
+
+
+        //Кнопка регистрации
+        button_signup.setOnClickListener{
+            val intent1 = Intent(this, Sign_up::class.java)
+            startActivity(intent1)
+        }
     }
 
     fun findPerson (i : Int, username : String, password : String, intent : Intent) {
