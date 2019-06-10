@@ -7,6 +7,7 @@ import android.os.Bundle
 import android.widget.ArrayAdapter
 import android.widget.ListAdapter
 import android.widget.TextView
+import com.example.MuseumQuests.QuestInfo.Companion.totalPoints
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
@@ -27,6 +28,7 @@ class QuestList : AppCompatActivity() {
                 val intent = Intent(this, QuestInfo::class.java)
                 val value : Int = index
                 intent.putExtra(QuestInfo.KEY_QUEST_NUM, value)
+                totalPoints = 0
                 startActivity(intent)
         }
     }

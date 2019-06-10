@@ -23,12 +23,6 @@
                 android:layout_height="100dp"
                 android:id="@+id/imageView2"
                 android:src="@drawable/mueseum"/>
-        <Button android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="click to change language"
-                android:layout_marginVertical="8dp"
-                android:background="@drawable/change_language_button"
-        />
 
         <ImageView
                 android:layout_width="match_parent"
@@ -41,6 +35,12 @@
                   android:gravity="center_horizontal"
                   android:id="@+id/username"
                 />
+        <EditText android:layout_width="match_parent" android:layout_height="wrap_content"
+                  android:focusable="true"
+                  android:hint="Password"
+                  android:gravity="center_horizontal"
+                  android:id="@+id/password"
+        />
 
         <Button android:layout_width="match_parent" android:layout_height="wrap_content"
                 android:background="@drawable/button_start"

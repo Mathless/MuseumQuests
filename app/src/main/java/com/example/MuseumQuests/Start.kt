@@ -9,6 +9,7 @@ import android.widget.ListAdapter
 import android.widget.TextView
 import android.widget.Toast
 import com.example.MuseumQuests.QuestInfo.Companion.id_current
+import com.example.MuseumQuests.QuestInfo.Companion.points_current
 import com.example.MuseumQuests.QuestInfo.Companion.username_current
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
@@ -33,8 +34,6 @@ class Start : AppCompatActivity() {
             username_current = username.text.toString()
             findPerson(0, username_current, intent)
         }
-
-
     }
 
     fun findPerson (i : Int, username : String, intent : Intent) {
@@ -43,7 +42,6 @@ class Start : AppCompatActivity() {
             override fun onCancelled(p0: DatabaseError) {
                 println("not implemented")
             }
-
             override fun onDataChange(p0: DataSnapshot) {
                 val post = p0.getValue(String::class.java).toString()
                 if (post != "null") {
