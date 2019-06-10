@@ -48,13 +48,20 @@
                 android:textColor="#FFFFFF"
                 android:id="@+id/buttonStart"
                 android:textSize="16sp"
+                android:layout_marginVertical="16dp"
+        />
+        <TextView android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:text="Don't have an account?"
+                  android:gravity="center"
+                  android:textSize="12sp"
         />
         <Button android:layout_width="wrap_content" android:layout_height="wrap_content"
                 android:id="@+id/button_signup"
                 android:text="Sign up"
                 android:textStyle="normal"
-                android:textSize="10sp"
+                android:textSize="12sp"
                 android:textColor="#83000000"
-                android:background="@android:color/transparent"></Button>
+                android:background="@android:color/transparent"/>
     </LinearLayout>
 </ScrollView>

@@ -3,11 +3,13 @@ package com.example.MuseumQuests
 import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.support.v7.app.AlertDialog
 import android.util.DisplayMetrics
 import android.util.Log
 import android.widget.ArrayAdapter
 import android.widget.ListAdapter
 import android.widget.TextView
+import android.widget.Toast
 import com.example.MuseumQuests.QuestInfo.Companion.id_current
 import com.example.MuseumQuests.QuestInfo.Companion.username_current
 import com.google.firebase.database.DataSnapshot
@@ -26,7 +28,6 @@ class Home : AppCompatActivity() {
 
         checkScore()
         checkPlace(id_current)
-
         username.text = "username: $username_current"
 
         Log.d(logTag, "onCreate called")
@@ -34,7 +35,21 @@ class Home : AppCompatActivity() {
             val intent = Intent(this, QuestList::class.java)
             startActivity(intent)
         }
+        signOut.setOnClickListener {
+            //Диалоговое окно с потверждением выхода
 
+            val builder = AlertDialog.Builder(this)
+            builder.setTitle("Sign out")
+            builder.setMessage("Are you sure you want to sign out?")
+            builder.setPositiveButton("Sign out"){_, _ ->
+                val intent = Intent(this, Start::class.java)
+                startActivity(intent)
+            }
+            builder.setNeutralButton("Cancel"){_,_->}
+            val dialog: AlertDialog = builder.create()
+            dialog.show()
+
+        }
         val data = Array(5){i -> ("Quest $i")}
         val adapter = ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, data)
         listofquests.adapter = adapter as ListAdapter?
