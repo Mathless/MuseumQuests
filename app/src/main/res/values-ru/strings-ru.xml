@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">MuseumQuests</string>
+    <string name="questname">Квест #1</string>
+    <string name="question">Вопрос</string>
+    <string name="welcome_to_museumquests">Добро пожаловать в MuseumQuests</string>
+    <string name="enter_your_name">Enter your Name</string>
+    <string name="sign_in">Войти</string>
+    <string name="don_t_have_an_account">Нету аккаунта?</string>
+    <string name="enter_your_name_and_password">Введите своё имя и пароль</string>
+    <string name="password">Пароль</string>
+    <string name="confirm_your_password">Повторите пароль</string>
+    <string name="sign_up">Зарегистрироваться</string>
+    <string name="home">Дом</string>
+    <string name="sign_out">Выйти</string>
+    <string name="score">Счёт :</string>
+    <string name="place">Место :</string>
+    <string name="done_quests">Пройденные квесты:</string>
+    <string name="start_new_quest">Начать новый квест</string>
+    <string name="info">Информация:</string>
+    <string name="start">Начать</string>
+    <string name="tap_on_quest">Нажмите на квест</string>
+    <string name="skip">Пропуск</string>
+    <string name="check">Проверить</string>
+    <string name="place_1">Место : 1</string>
+    <string name="go_home">В начало</string>
+    <string name="already_have_an_account">Уже есть аккаунт?</string>
+</resources>
