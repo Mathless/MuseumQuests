@@ -33,7 +33,7 @@ class Start : AppCompatActivity() {
             //saveData()
             id_current = -1
             val intent = Intent(this, Home::class.java)
-            username_current = username.text.toString()
+            username_current = username.text.toString().toLowerCase()
             val password = password.text.toString()
             findPerson(0, username_current, password, intent) // check the input data
         }

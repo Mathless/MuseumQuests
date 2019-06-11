@@ -27,7 +27,7 @@ class Home : AppCompatActivity() {
         setContentView(R.layout.activity_home)
 
         checkScore()
-        checkPlace(id_current)
+        checkPlace(0)
         username.text = "username: $username_current"
 
         Log.d(logTag, "onCreate called")
@@ -77,7 +77,6 @@ class Home : AppCompatActivity() {
             }
             override fun onDataChange(p0: DataSnapshot) {
                 val post = p0.getValue(String::class.java)
-                println(post)
                 if (post == null)
                     textplacehome.text = "PLACE : $place"
                 else {
