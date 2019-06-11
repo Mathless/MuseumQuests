@@ -58,8 +58,10 @@ class Result : AppCompatActivity() {
             override fun onDataChange(p0: DataSnapshot) {
                 val post = p0.getValue(String::class.java)
 
-                if (post != null && post.toString() == questTitle)
+                if (post != null && post.toString() == questTitle) {
                     totalPoints = 0
+                    Toast.makeText(getApplicationContext(),"You have already passed this quest!\nYou will not gain any points", Toast.LENGTH_LONG).show()
+                }
 
                 if (post != null && post.toString() != questTitle)
                     setPassedQuest(index + 1)
