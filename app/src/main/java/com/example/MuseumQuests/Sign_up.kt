@@ -3,6 +3,7 @@ package com.example.MuseumQuests
 import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.support.v7.app.AlertDialog
 import android.widget.Toast
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
@@ -17,11 +18,12 @@ class Sign_up : AppCompatActivity() {
         setContentView(R.layout.activity_sign_up)
 
         button_signup.setOnClickListener {
-            var name = username.text.toString()
-            var password = password_signup1.text
+            val name = username.text.toString()
+            val password = password_signup1.text.toString()
+            println("name $name name")
 
             when {
-                password_signup1.text != password_signup2.text -> {
+                password_signup1.text.toString() != password_signup2.text.toString() -> {
                     val toast: Toast = Toast.makeText(
                         getApplicationContext(),
                         "Passwords don't match",
@@ -29,18 +31,34 @@ class Sign_up : AppCompatActivity() {
                     )
                     toast.show()
                 }
-                name == null -> {
+                name.length < 4 -> {
                     val toast: Toast = Toast.makeText(
                         getApplicationContext(),
-                        "Passwords don't match",
+                        "Username must have at least 4 characters!",
+                        Toast.LENGTH_SHORT
+                    )
+                    toast.show()
+                }
+                password.length < 4 -> {
+                    val toast: Toast = Toast.makeText(
+                        getApplicationContext(),
+                        "Password must have at least 4 characters!",
                         Toast.LENGTH_SHORT
                     )
                     toast.show()
                 }
                 else -> {
-                    checkUsername(name, 0)
+                    checkUsername(name, 0, password)
 
-
+                    val builder = AlertDialog.Builder(this)
+                    builder.setTitle("New user added!")
+                    builder.setMessage("Username: $name")
+                    builder.setPositiveButton("Sign in"){_, _ ->
+                        val intent = Intent(this, Start::class.java)
+                        startActivity(intent)
+                    }
+                    val dialog: AlertDialog = builder.create()
+                    dialog.show()
                 }
             }
         }
@@ -50,9 +68,9 @@ class Sign_up : AppCompatActivity() {
         }
     }
 
-    fun checkUsername(name : String, id : Int) {
-        val root = FirebaseDatabase.getInstance().getReference("people/$id/nickname")
-        root.addValueEventListener(object : ValueEventListener {
+    fun checkUsername(name : String, id : Int, password : String) {
+        val root = FirebaseDatabase.getInstance().getReference("people/$id/username")
+        root.addListenerForSingleValueEvent(object : ValueEventListener {
             override fun onCancelled(p0: DatabaseError) {
                 println("not implemented")
             }
@@ -62,12 +80,12 @@ class Sign_up : AppCompatActivity() {
                     Toast.makeText(getApplicationContext(),"This username already exists!", Toast.LENGTH_SHORT).show()
                 else
                     if (post != null)
-                        checkUsername(name, id + 1)
+                        checkUsername(name, id + 1, password)
                     else {
-                        val ref = FirebaseDatabase.getInstance().getReference("people/2")
-                        ref.child("name").setValue("new user").addOnCompleteListener {}
-                        ref.child("password").setValue("1234").addOnCompleteListener {}
-                        ref.child("totalPoints").setValue("0").addOnCompleteListener {}
+                        val ref = FirebaseDatabase.getInstance().getReference("people/$id")
+                        ref.child("username").setValue(name).addOnCompleteListener {}
+                        ref.child("verification_code").setValue(password).addOnCompleteListener {}
+                        ref.child("pointsEarned").setValue("0").addOnCompleteListener {}
                     }
             }
         })

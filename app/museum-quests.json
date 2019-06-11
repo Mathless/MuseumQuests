@@ -1,0 +1,57 @@
+{
+  "people": [
+    {
+      "username": "user1",
+      "verification_code": "1234",
+      "pointsEarned": "0"
+    }
+  ],
+  "museums" : {
+    "quests" : [ {
+      "description" : "Наш самый первый квест по эрмитажу",
+      "questions" : [ {
+        "answers_options" : [ "Ее построил архитектор из Иордании", "Она была перестроена перед приездом Иорданского посла", "Из-за того, что царская семья в праздник Крещения спускалась к Иордане", "Ее назвали так в честь горячо любимой племянницы Екатерины Петровны – Иорданы" ],
+        "correct_answer" : "Из-за того, что царская семья в праздник Крещения спускалась к Иордане",
+        "question" : "Почему лестница стала называться Иорданской?"
+      }, {
+        "answers_options" : [ "14", "10", "4", "12" ],
+        "correct_answer" : "10",
+        "question" : "Сколько колонн на Иорданской лестнице?"
+      }, {
+        "answers_options" : [ "Богиня мудрости Минерва", "Екатерина I – императрица, его вторая жена", "Евдокия Лопухина – первая жена Петра", "Елизавета Петровна – любимая дочка Петра" ],
+        "correct_answer" : "Богиня мудрости Минерва",
+        "question" : "Кто изображен на картине над троном в малом тронном зале рядом с Петром?"
+      }, {
+        "answers_options" : [ "Из-за его размера", "На приемах там сидела императрица", "На приемах там сидел наследник", "Это был зал для малых приемов" ],
+        "correct_answer" : "Это был зал для малых приемов",
+        "question" : "Почему малый тронный зал называется «малым»?"
+      } ],
+      "title" : "Лучший квест по Эрмитажу"
+    }, {
+      "description" : "demo quest description 2",
+      "questions" : [ {
+        "answers_options" : [ "first answer 2.1", "second answer 2.1" ],
+        "correct_answer" : "first answer",
+        "question" : "demo question 2.1"
+      }, {
+        "answers_options" : [ "first answer 2.2", "second answer 2.2" ],
+        "correct_answer" : "first answer",
+        "question" : "demo question 2.2"
+      } ],
+      "title" : "demo quest title 2"
+    }, {
+      "description" : "demo quest description 3",
+      "questions" : [ {
+        "answers_options" : [ "first answer 3.1", "second answer 3.1" ],
+        "correct_answer" : "first answer",
+        "question" : "demo question 3.1"
+      }, {
+        "answers_options" : [ "first answer 3.2", "second answer 3.2" ],
+        "correct_answer" : "first answer",
+        "question" : "demo question 3.2"
+      } ],
+      "title" : "demo quest title 3"
+    } ]
+  },
+  "people_amount" : 0
+}
