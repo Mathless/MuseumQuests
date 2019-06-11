@@ -53,6 +53,10 @@ class Home : AppCompatActivity() {
             dialog.show()
 
         }
+        createNew.setOnClickListener{
+            val intent = Intent(this, NewQuestActivity::class.java)
+            startActivity(intent)
+        }
 
     }
 

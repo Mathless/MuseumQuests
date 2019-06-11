@@ -9,6 +9,12 @@
             android:textSize="12sp"
             android:background="@drawable/change_language_button"
             android:id="@+id/signOut"/>
+    <Button android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Create quest"
+            android:textSize="12sp"
+            android:background="@drawable/change_language_button"
+            android:id="@+id/createNew" android:layout_alignEnd="@+id/llhome"/>
     <LinearLayout android:layout_width="match_parent"
                   android:layout_height="wrap_content"
                   android:orientation="vertical"
