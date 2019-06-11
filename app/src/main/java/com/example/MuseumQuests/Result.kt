@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
 import com.example.MuseumQuests.QuestInfo.Companion.id_current
+import com.example.MuseumQuests.QuestInfo.Companion.questTitle
 import com.example.MuseumQuests.QuestInfo.Companion.totalPoints
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
@@ -22,6 +23,7 @@ class Result : AppCompatActivity() {
         setContentView(R.layout.activity_result)
         textscore.text = "Score : $totalPoints"
 
+        setPassedQuest(0)
         setScore()
 
         Log.d(logTag, "onCreate called")
@@ -46,4 +48,26 @@ class Result : AppCompatActivity() {
             }
         })
     }
+
+    fun setPassedQuest(index : Int){
+        val rootRef1 = FirebaseDatabase.getInstance().getReference("people/$id_current/quests_passed/$index")
+        rootRef1.addListenerForSingleValueEvent(object : ValueEventListener {
+            override fun onCancelled(p0: DatabaseError) {
+                println("not implemented")
+            }
+            override fun onDataChange(p0: DataSnapshot) {
+                val post = p0.getValue(String::class.java)
+
+                if (post != null && post.toString() == questTitle)
+                    totalPoints = 0
+
+                if (post != null && post.toString() != questTitle)
+                    setPassedQuest(index + 1)
+                else {
+                    rootRef1.setValue("$questTitle")
+                }
+            }
+        })
+    }
+
 }

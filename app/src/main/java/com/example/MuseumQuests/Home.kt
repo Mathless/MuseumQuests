@@ -1,5 +1,6 @@
 package com.example.MuseumQuests
 
+import android.content.Context
 import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
@@ -17,6 +18,7 @@ import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
 import kotlinx.android.synthetic.main.activity_home.*
+import kotlinx.android.synthetic.main.activity_quest_list.*
 
 class Home : AppCompatActivity() {
     val logTag = "DEMO_TAG"
@@ -29,6 +31,7 @@ class Home : AppCompatActivity() {
         checkScore()
         checkPlace(0)
         username.text = "username: $username_current"
+        setValToListByPath("people/$id_current/quests_passed", 0, this)
 
         Log.d(logTag, "onCreate called")
         gotoquestlist.setOnClickListener {
@@ -50,9 +53,7 @@ class Home : AppCompatActivity() {
             dialog.show()
 
         }
-        val data = Array(5){i -> ("Quest $i")}
-        val adapter = ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, data)
-        listofquests.adapter = adapter as ListAdapter?
+
     }
 
     fun checkScore(){
@@ -84,6 +85,35 @@ class Home : AppCompatActivity() {
                         place++
                     checkPlace(id + 1)
                 }
+            }
+        })
+    }
+
+    val dataArray = Array<String>(100000){_ -> "_"}
+
+    fun setValToListByPath (path: String, i : Int, ctx : Context)
+    {
+        val rootRef = FirebaseDatabase.getInstance().getReference("$path/$i")
+        rootRef.addValueEventListener(object : ValueEventListener {
+            override fun onCancelled(p0: DatabaseError) {
+                println("not implemented")
+            }
+            override fun onDataChange(p0: DataSnapshot) {
+                val post = p0.getValue(String::class.java)
+                if (post == null) {
+                    var dataArrayToGo = emptyArray<String>()
+
+                    for(k in 0..99999)
+                        if (dataArray[k] != "_") {
+                            dataArrayToGo += dataArray[k]
+                        }
+                    val adapter = ArrayAdapter<String>(ctx, android.R.layout.simple_list_item_1, dataArrayToGo)
+                    listofquests.adapter = adapter as ListAdapter?
+                    return
+                }
+                dataArray[i] = post.toString()
+                println(dataArray[i])
+                setValToListByPath (path, i + 1, ctx)
             }
         })
     }

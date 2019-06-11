@@ -21,6 +21,7 @@ class QuestInfo : AppCompatActivity() {
         var id_current : Int = -1
         var points_current : Int = -1
         var totalPoints = 0
+        var questTitle = " "
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -36,6 +37,7 @@ class QuestInfo : AppCompatActivity() {
                 val intent = Intent(this, Question::class.java)
                 intent.putExtra(KEY_QUEST_NUM, i)
                 intent.putExtra(KEY_QUESTION_NUM, 0)
+                questTitle = text_questname.text.toString()
                 startActivity(intent)
             }
 
