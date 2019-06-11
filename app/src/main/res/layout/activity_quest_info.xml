@@ -26,7 +26,7 @@
 
         />
         <TextView
-                android:text="INFO:"
+                android:text="@string/info"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/text_i"
@@ -52,7 +52,7 @@
                     android:layout_width="match_parent"
                     android:layout_margin="12dp"
                     android:padding="8dp"
-                    android:gravity="left"
+                    android:gravity="start"
 
                     android:layout_height="wrap_content"
                     android:id="@+id/textView" android:textColor="@color/black"
@@ -60,7 +60,7 @@
 
     </ScrollView>
     <Button
-            android:text="Start"
+            android:text="@string/start"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
