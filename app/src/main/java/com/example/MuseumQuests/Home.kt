@@ -2,6 +2,7 @@ package com.example.MuseumQuests
 
 import android.content.Context
 import android.content.Intent
+import android.content.res.Configuration
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.support.v7.app.AlertDialog
@@ -19,6 +20,7 @@ import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
 import kotlinx.android.synthetic.main.activity_home.*
 import kotlinx.android.synthetic.main.activity_quest_list.*
+import java.util.*
 
 class Home : AppCompatActivity() {
     val logTag = "DEMO_TAG"
@@ -27,6 +29,21 @@ class Home : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
+
+        //Кнопка смены языка
+        button_changelanguage.setOnClickListener{
+            val locale = Locale("en")
+        Locale.setDefault(locale)
+        val configuration = Configuration()
+        configuration.locale = locale
+        baseContext.resources.updateConfiguration(configuration, null)
+
+        }
+
+
+
+
+
 
         checkScore()
         checkPlace(0)
