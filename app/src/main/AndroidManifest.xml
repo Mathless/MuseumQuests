@@ -11,12 +11,10 @@
             android:theme="@style/AppTheme">
         <activity
                 android:name=".NewQuestionActivity"
-                android:label="@string/title_activity_new_question"
                 android:theme="@style/AppTheme.NoActionBar">
         </activity>
         <activity
                 android:name=".NewQuestActivity"
-                android:label="@string/title_activity_new_quest"
                 android:theme="@style/AppTheme.NoActionBar">
         </activity>
         <activity android:name=".Sign_up">

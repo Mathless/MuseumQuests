@@ -5,11 +5,10 @@
 
     <Button android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
-            android:text="@string/sign_out"
+            android:text="Sign Out"
             android:textSize="12sp"
-            android:background="@android:color/transparent"
-            android:id="@+id/signOut"/>
+            android:background="@drawable/change_language_button"
+            android:id="@+id/signOut" />
     <Button android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Create quest"

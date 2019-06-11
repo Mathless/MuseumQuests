@@ -6,6 +6,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context=".Sign_up">
+
     <LinearLayout android:layout_width="match_parent"
                   android:layout_height="match_parent"
                   android:orientation="vertical"
@@ -13,7 +14,6 @@
                   android:padding="8dp"
                   android:descendantFocusability="beforeDescendants"
                   android:focusableInTouchMode="true">
-
         <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="100dp"
@@ -39,76 +39,70 @@
                   android:gravity="center"
                   android:textSize="16sp"
         />
-        <RadioGroup android:layout_width="match_parent" android:layout_height="match_parent">
-        <LinearLayout android:layout_width="match_parent"
-                      android:layout_height="wrap_content"
-                      android:orientation="horizontal"
-                      android:layout_margin="10dp">
-            <RadioButton android:layout_width="wrap_content"
-                      android:id="@+id/correctanswer1"
-                      android:layout_margin="4dp"
-                      android:layout_height="wrap_content"
-            />
-            <EditText android:layout_width="match_parent" android:layout_height="wrap_content"
-                      android:focusable="true"
-                      android:hint="Enter first answer"
-                      android:gravity="center_horizontal"
-                      android:layout_margin="10dp"
-                      android:id="@+id/questionanswer1"
-            />
-        </LinearLayout>
-        <LinearLayout android:layout_width="match_parent"
-                      android:layout_height="wrap_content"
-                      android:orientation="horizontal"
-                      android:layout_margin="10dp">
-            <RadioButton android:layout_width="wrap_content"
-                      android:id="@+id/correctanswer2"
-                      android:layout_margin="4dp"
-                      android:layout_height="wrap_content"
-            />
-            <EditText android:layout_width="match_parent" android:layout_height="wrap_content"
-                      android:focusable="true"
-                      android:hint="Enter second answer"
-                      android:gravity="center_horizontal"
-                      android:layout_marginVertical="4dp"
-                      android:id="@+id/questionanswer2"
-            />
-        </LinearLayout>
-        <LinearLayout android:layout_width="match_parent"
-                      android:layout_height="wrap_content"
-                      android:orientation="horizontal"
-                      android:layout_margin="10dp">
-            <RadioButton android:layout_width="wrap_content"
-                      android:id="@+id/correctanswer3"
-                      android:layout_margin="4dp"
-                      android:layout_height="wrap_content"
-                      android:layout_marginRight="20dp"
-            />
-            <EditText android:layout_width="match_parent" android:layout_height="wrap_content"
-                      android:focusable="true"
-                      android:hint="Enter third answer"
-                      android:gravity="center_horizontal"
-                      android:layout_marginVertical="4dp"
-                      android:id="@+id/questionanswer3"
-            />
-        </LinearLayout>
-        <LinearLayout android:layout_width="match_parent"
-                      android:layout_height="wrap_content"
-                      android:orientation="horizontal"
-                      android:layout_margin="10dp">
-            <RadioButton android:layout_width="wrap_content"
-                      android:id="@+id/correctanswer4"
-                      android:layout_margin="4dp"
-                      android:layout_height="wrap_content"
-            />
-            <EditText android:layout_width="match_parent" android:layout_height="wrap_content"
-                      android:focusable="true"
-                      android:hint="Enter fourth answer"
-                      android:gravity="center_horizontal"
-                      android:layout_marginVertical="4dp"
-                      android:id="@+id/questionanswer4"
-            />
-        </LinearLayout>
+
+        <RadioGroup android:layout_width="match_parent" android:layout_height="match_parent"
+            android:id="@+id/radio_group">
+            <LinearLayout android:layout_width="match_parent"
+                          android:layout_height="wrap_content"
+                          android:orientation="horizontal"
+                          android:layout_margin="10dp">
+                <RadioButton android:layout_width="wrap_content"
+                          android:id="@+id/correctanswer1"
+                          android:layout_margin="4dp"
+                          android:layout_height="wrap_content"/>
+                <EditText android:layout_width="match_parent" android:layout_height="wrap_content"
+                          android:focusable="true"
+                          android:hint="Enter first answer"
+                          android:gravity="center_horizontal"
+                          android:layout_margin="10dp"
+                          android:id="@+id/questionanswer1"/>
+            </LinearLayout>
+            <LinearLayout android:layout_width="match_parent"
+                          android:layout_height="wrap_content"
+                          android:orientation="horizontal"
+                          android:layout_margin="10dp">
+                <RadioButton android:layout_width="wrap_content"
+                          android:id="@+id/correctanswer2"
+                          android:layout_margin="4dp"
+                          android:layout_height="wrap_content"/>
+                <EditText android:layout_width="match_parent" android:layout_height="wrap_content"
+                          android:focusable="true"
+                          android:hint="Enter second answer"
+                          android:gravity="center_horizontal"
+                          android:layout_marginVertical="4dp"
+                          android:id="@+id/questionanswer2"/>
+            </LinearLayout>
+            <LinearLayout android:layout_width="match_parent"
+                          android:layout_height="wrap_content"
+                          android:orientation="horizontal"
+                          android:layout_margin="10dp">
+                <RadioButton android:layout_width="wrap_content"
+                          android:id="@+id/correctanswer3"
+                          android:layout_margin="4dp"
+                          android:layout_height="wrap_content"
+                          android:layout_marginRight="20dp"/>
+                <EditText android:layout_width="match_parent" android:layout_height="wrap_content"
+                          android:focusable="true"
+                          android:hint="Enter third answer"
+                          android:gravity="center_horizontal"
+                          android:layout_marginVertical="4dp"
+                          android:id="@+id/questionanswer3"/>
+            </LinearLayout>
+            <LinearLayout android:layout_width="match_parent"
+                          android:layout_height="wrap_content"
+                          android:orientation="horizontal"
+                          android:layout_margin="10dp">
+                <RadioButton android:layout_width="wrap_content"
+                          android:id="@+id/correctanswer4"
+                          android:layout_margin="4dp"
+                          android:layout_height="wrap_content"/>
+                <EditText android:layout_width="match_parent" android:layout_height="wrap_content"
+                          android:focusable="true"
+                          android:hint="Enter fourth answer"
+                          android:gravity="center_horizontal"
+                          android:layout_marginVertical="4dp"
+                          android:id="@+id/questionanswer4"/>
+            </LinearLayout>
         </RadioGroup>
         <TextView android:layout_width="match_parent"
                   android:layout_height="wrap_content"
