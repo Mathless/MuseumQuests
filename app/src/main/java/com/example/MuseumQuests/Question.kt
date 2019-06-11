@@ -4,8 +4,10 @@ import android.content.Context
 import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.support.v7.app.AlertDialog
 import android.widget.ArrayAdapter
 import android.widget.ListAdapter
+import android.widget.ListView
 import android.widget.TextView
 import com.example.MuseumQuests.QuestInfo.Companion.totalPoints
 import com.google.firebase.database.DataSnapshot
@@ -13,6 +15,7 @@ import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
 import kotlinx.android.synthetic.main.activity_question.*
+import org.w3c.dom.Text
 
 class Question : AppCompatActivity() {
 
@@ -21,6 +24,8 @@ class Question : AppCompatActivity() {
         setContentView(R.layout.activity_question)
 
         var answerGiven : String = " "
+        var idClicked : Int = 0
+        var isChecked : Boolean = false
 
         val i = intent.getIntExtra(QuestInfo.KEY_QUEST_NUM, 0)
         val j = intent.getIntExtra(QuestInfo.KEY_QUESTION_NUM, 0)
@@ -29,29 +34,44 @@ class Question : AppCompatActivity() {
         setValToListByPath("museums/quests/$i/questions/$j/answers_options/", 0, this) // заполнение листа с вариантами ответов
 
         text_list.setOnItemClickListener{
-                _, view, _, _ ->
+                _, view, index, _ ->
             // все color.white плз
-            for(i in 0..3)
-                text_list.getChildAt(i).setBackgroundResource(R.drawable.rectangle)
-            val value = (view as TextView).text.toString()
-            view.setBackgroundResource(R.drawable.done_quests_list)
-            answerGiven = value
+            if (!isChecked) {
+                for (k in 0..3)
+                    text_list.getChildAt(k).setBackgroundResource(R.drawable.rectangle)
+                val value = (view as TextView).text.toString()
+                view.setBackgroundResource(R.drawable.done_quests_list)
+                answerGiven = value
+                idClicked = index
+            }
         }
 
         //Проверка вопроса или переход на окно результата
         button_check.setOnClickListener{
-            if (answerGiven == " ")
-                for(i in 0..3)
-                    text_list.getChildAt(i).setBackgroundResource(R.drawable.rectangle_warning)
-            else {
-                checkAnswer(answerGiven, 10, "museums/quests/$i/questions/$j/correct_answer")
+            if (isChecked)
                 checkWhereToGo(i, j)
+            else if (answerGiven == " ")
+                for(k in 0..3)
+                    text_list.getChildAt(k).setBackgroundResource(R.drawable.rectangle_warning)
+            else {
+                showRightAnswer("museums/quests/$i/questions/$j/correct_answer", text_list, idClicked)
+                checkAnswer(answerGiven, 10, "museums/quests/$i/questions/$j/correct_answer")
+                isChecked = true
+                button_check.text = "Next"
             }
         }
 
         // Конпка скипа вопроса
         button_skip.setOnClickListener{
-            checkWhereToGo(i, j)
+            val builder = AlertDialog.Builder(this)
+            builder.setTitle("Skip the question")
+            builder.setMessage("You won't got any points!")
+            builder.setPositiveButton("Skip"){_, _ ->
+                checkWhereToGo(i, j)
+            }
+            builder.setNeutralButton("Cancel"){_,_->}
+            val dialog: AlertDialog = builder.create()
+            dialog.show()
         }
     }
 
@@ -123,5 +143,22 @@ class Question : AppCompatActivity() {
         })
     }
 
+    fun showRightAnswer(path : String, text_list : ListView, idClicked : Int){
+        val rootRef = FirebaseDatabase.getInstance().getReference(path)
+        rootRef.addValueEventListener(object : ValueEventListener {
+            override fun onCancelled(p0: DatabaseError) {
+                println("not implemented")
+            }
+            override fun onDataChange(p0: DataSnapshot) {
+                val post = p0.getValue(String::class.java)
+                for (k in 0..3) {
+                    if ( (text_list.getChildAt(k) as TextView).text  == post) {
+                        text_list.getChildAt(idClicked).setBackgroundResource(R.drawable.rectangle_warning)
+                        text_list.getChildAt(k).setBackgroundResource(R.drawable.rectangle_correct)
+                    }
+                }
+            }
+        })
+    }
 
 }
