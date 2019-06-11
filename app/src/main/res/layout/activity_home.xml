@@ -5,9 +5,10 @@
 
     <Button android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Sign out"
+            android:layout_alignParentEnd="true"
+            android:text="@string/sign_out"
             android:textSize="12sp"
-            android:background="@drawable/change_language_button"
+            android:background="@android:color/transparent"
             android:id="@+id/signOut"/>
     <LinearLayout android:layout_width="match_parent"
                   android:layout_height="wrap_content"
@@ -18,7 +19,7 @@
                   android:padding="8dp">
         <TextView android:layout_width="wrap_content"
                   android:layout_height="wrap_content"
-                  android:text="HOME"
+                  android:text="@string/home"
                   android:id="@+id/texthome"
                   android:textSize="40sp"
                   android:textStyle="bold"
@@ -31,27 +32,27 @@
                   android:textColor="@color/black"/>
         <TextView android:layout_width="match_parent"
                   android:layout_height="wrap_content"
-                  android:text="SCORE : "
+                  android:text="@string/score"
                   android:id="@+id/textscorehome"
                   android:textAlignment="center"
                   android:textSize="24sp"
         />
         <TextView android:layout_width="match_parent"
                   android:layout_height="wrap_content"
-                  android:text="PLACE : "
+                  android:text="@string/place"
                   android:id="@+id/textplacehome"
                   android:textAlignment="center"
                   android:textSize="24sp"
         />
         <Button android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="click to change language"
+                android:text="@string/click_to_change_language"
                 android:layout_marginVertical="8dp"
                 android:background="@drawable/change_language_button"
         />
         <TextView android:layout_width="match_parent"
                   android:layout_height="wrap_content"
-                  android:text="DONE QUESTS:"
+                  android:text="@string/done_quests"
                   android:id="@+id/textplace"
                   android:textStyle="bold"
                   android:textAlignment="center"
@@ -73,7 +74,7 @@
 
     <Button android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Start new quest"
+            android:text="@string/start_new_quest"
             android:id="@+id/gotoquestlist"
             android:textSize="24sp"
             android:gravity="center"

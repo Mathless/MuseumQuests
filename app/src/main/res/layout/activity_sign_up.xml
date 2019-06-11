@@ -7,7 +7,7 @@
         android:layout_height="match_parent"
         tools:context=".Sign_up">
 <LinearLayout android:layout_width="match_parent"
-              android:layout_height="match_parent"
+              android:layout_height="wrap_content"
               android:orientation="vertical"
               android:gravity="center"
                 android:padding="8dp"
@@ -21,21 +21,21 @@
             android:src="@drawable/mueseum"/>
 <TextView android:layout_width="match_parent"
           android:layout_height="wrap_content"
-          android:text="Enter your name and password"
+          android:text="@string/enter_your_name_and_password"
           android:gravity="center"
           android:textSize="16sp"
 />
 
     <EditText android:layout_width="match_parent" android:layout_height="wrap_content"
               android:focusable="true"
-              android:hint="Enter your Name"
+              android:hint="@string/enter_your_name"
               android:gravity="center_horizontal"
               android:id="@+id/username"
               android:layout_marginVertical="24dp"
     />
     <EditText android:layout_width="match_parent" android:layout_height="wrap_content"
               android:focusable="true"
-              android:hint="Password"
+              android:hint="@string/password"
               android:gravity="center_horizontal"
               android:layout_marginVertical="4dp"
 
@@ -43,7 +43,7 @@
     />
     <EditText android:layout_width="match_parent" android:layout_height="wrap_content"
               android:focusable="true"
-              android:hint="Confirm your password"
+              android:hint="@string/confirm_your_password"
               android:layout_marginVertical="4dp"
               android:gravity="center_horizontal"
               android:id="@+id/password_signup2"
@@ -51,7 +51,7 @@
     <Button android:layout_width="match_parent" android:layout_height="wrap_content"
             android:background="@drawable/button_start"
             android:layout_marginVertical="16dp"
-            android:text="Sign up"
+            android:text="@string/sign_up"
             android:textColor="#FFFFFF"
             android:id="@+id/button_signup"
             android:textSize="16sp"
@@ -59,13 +59,13 @@
     <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content">
     <TextView android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:text="Already have an account?"
+    android:text="@string/already_have_an_account"
     android:gravity="center"
     android:textSize="12sp"
     />
     <Button android:layout_width="70dp" android:layout_height="wrap_content"
             android:id="@+id/button_signin_back"
-            android:text="Sign in"
+            android:text="@string/sign_in"
             android:textStyle="bold"
             android:textSize="16sp"
             android:textColor="#00B8D4"
