@@ -4,6 +4,8 @@ import android.content.Intent
 import android.os.Bundle
 import android.support.design.widget.Snackbar
 import android.support.v7.app.AppCompatActivity;
+import com.example.MuseumQuests.Home.Companion.new_quest_description
+import com.example.MuseumQuests.Home.Companion.new_quest_title
 
 import kotlinx.android.synthetic.main.activity_new_quest.*
 
@@ -14,6 +16,9 @@ class NewQuestActivity : AppCompatActivity() {
         setContentView(R.layout.activity_new_quest)
 
         button_makequestion.setOnClickListener {
+            new_quest_title = newquesttitle.text.toString()
+            new_quest_description = newquestdeskription.text.toString()
+
             val intent = Intent(this, NewQuestionActivity::class.java)
             startActivity(intent)
         }

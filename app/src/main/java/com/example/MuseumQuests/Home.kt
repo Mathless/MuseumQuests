@@ -21,6 +21,7 @@ import com.google.firebase.database.ValueEventListener
 import kotlinx.android.synthetic.main.activity_home.*
 import kotlinx.android.synthetic.main.activity_quest_list.*
 import java.util.*
+import kotlin.collections.ArrayList
 
 class Home : AppCompatActivity() {
     val logTag = "DEMO_TAG"
@@ -137,6 +138,22 @@ class Home : AppCompatActivity() {
                 setValToListByPath (path, i + 1, ctx)
             }
         })
+    }
+    companion object {
+        var size = 0
+        var new_quest_title = " "
+        var new_quest_description = " "
+        class new_quest_question (
+            question : String,
+            correct_answer : String,
+            answer_options : Array<String>
+        )
+        {
+            var question = question
+            var correct_answer = correct_answer
+            var answer_options = answer_options
+        }
+        var new_quest_questions = Array<new_quest_question>(100){new_quest_question(" "," ", Array(4){" "})}
     }
 }
 
