@@ -50,4 +50,5 @@
     <string name="atlest">Имя долнжо состоять как минимум из 4 символов!</string>
     <string name="passatleast">Пароль должен состоять как минимум из 4 символов!</string>
     <string name="alrexi">Такое имя пользователя уже существует!</string>
+    <string name="create_quest">Создать квест</string>
 </resources>

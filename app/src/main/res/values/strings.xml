@@ -51,5 +51,6 @@
     <string name="atlest">Username must have at least 4 characters!</string>
     <string name="passatleast">Password must have at least 4 characters!</string>
     <string name="alrexi">This username already exists!</string>
+    <string name="create_quest">Create quest</string>
 
 </resources>
