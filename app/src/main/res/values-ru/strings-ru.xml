@@ -27,4 +27,23 @@
     <string name="already_have_an_account">Уже есть аккаунт?</string>
     <string name="click_to_change_language">Сменить язык</string>
     <string name="your_result">Ваш результат</string>
+    <string name="make_up_title_and_description">Напишите название и описание</string>
+    <string name="enter_quest_title">Название квеста</string>
+    <string name="enter_description">Описание квеста</string>
+    <string name="check_your_inputs">Проверьте введенные данные!!!</string>
+    <string name="create_new_question">Создать новый вопрос</string>
+    <string name="your_question">Ваш вопрос</string>
+    <string name="enter_question">Введите вопрос</string>
+    <string name="input_answers_and_choose_correct_answer">Введите ответы и отметьте верный</string>
+    <string name="enter_first_answer">Введите первый ответ</string>
+    <string name="enter_second_answer">Введите второй ответ</string>
+    <string name="enter_third_answer">Введите третий ответ</string>
+    <string name="enter_fourth_answer">Введите четвертый ответ</string>
+    <string name="cancel_quest">Отменить создание квеста</string>
+    <string name="done">ГОТОВО</string>
+    <string name="quest_name">Quest name</string>
+    <string name="skipthequestion">Skip the question</string>
+    <string name="ywgap">You won\'t got any points!</string>
+    <string name="cancel">Cancel</string>
+    <string name="next">Дальше</string>
 </resources>

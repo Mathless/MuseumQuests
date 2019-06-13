@@ -7,7 +7,7 @@
         android:layout_height="match_parent"
         tools:context=".Sign_up">
     <LinearLayout android:layout_width="match_parent"
-                  android:layout_height="match_parent"
+                  android:layout_height="wrap_content"
                   android:orientation="vertical"
                   android:gravity="center"
                   android:padding="8dp"
@@ -21,21 +21,21 @@
                 android:src="@drawable/mueseum"/>
         <TextView android:layout_width="match_parent"
                   android:layout_height="wrap_content"
-                  android:text="Make up title and description"
+                  android:text="@string/make_up_title_and_description"
                   android:gravity="center"
                   android:textSize="16sp"
         />
 
         <EditText android:layout_width="match_parent" android:layout_height="wrap_content"
                   android:focusable="true"
-                  android:hint="Enter quest title"
+                  android:hint="@string/enter_quest_title"
                   android:gravity="center_horizontal"
                   android:id="@+id/newquesttitle"
                   android:layout_marginVertical="24dp"
         />
         <EditText android:layout_width="match_parent" android:layout_height="wrap_content"
                   android:focusable="true"
-                  android:hint="Enter description"
+                  android:hint="@string/enter_description"
                   android:gravity="center_horizontal"
                   android:layout_marginVertical="4dp"
 
@@ -43,14 +43,14 @@
         />
         <TextView android:layout_width="match_parent"
                   android:layout_height="wrap_content"
-                  android:text="Check your inputs!!!"
+                  android:text="@string/check_your_inputs"
                   android:gravity="center"
                   android:textSize="16sp"
         />
                 <Button android:layout_width="match_parent" android:layout_height="wrap_content"
                 android:background="@drawable/button_start"
                 android:layout_marginVertical="16dp"
-                android:text="Create new question"
+                android:text="@string/create_new_question"
                 android:textColor="#FFFFFF"
                 android:id="@+id/button_makequestion"
                 android:textSize="16sp"

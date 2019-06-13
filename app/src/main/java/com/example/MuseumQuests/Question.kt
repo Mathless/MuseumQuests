@@ -59,7 +59,7 @@ class Question : AppCompatActivity() {
                 showRightAnswer("museums/quests/$i/questions/$j/correct_answer", text_list, idClicked)
                 checkAnswer(answerGiven, 10, "museums/quests/$i/questions/$j/correct_answer")
                 isChecked = true
-                button_check.text = "Next"
+                button_check.text = getString(R.string.next)
                 button_skip.setEnabled(false);
                 button_skip.setBackgroundColor(0)
 
@@ -69,12 +69,12 @@ class Question : AppCompatActivity() {
         // Конпка скипа вопроса
         button_skip.setOnClickListener{
             val builder = AlertDialog.Builder(this)
-            builder.setTitle("Skip the question")
-            builder.setMessage("You won't got any points!")
-            builder.setPositiveButton("Skip"){_, _ ->
+            builder.setTitle(getString(R.string.skipthequestion))
+            builder.setMessage(getString(R.string.ywgap))
+            builder.setPositiveButton(getString(R.string.skip)){ _, _ ->
                 checkWhereToGo(i, j)
             }
-            builder.setNeutralButton("Cancel"){_,_->}
+            builder.setNeutralButton(getString(R.string.cancel)){ _, _->}
             val dialog: AlertDialog = builder.create()
             dialog.show()
         }

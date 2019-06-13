@@ -28,5 +28,24 @@
     <string name="go_home">GO HOME</string>
     <string name="already_have_an_account">Already have an account?</string>
     <string name="password">Password</string>
+    <string name="make_up_title_and_description">Make up title and description</string>
+    <string name="enter_quest_title">Enter quest title</string>
+    <string name="enter_description">Enter description</string>
+    <string name="check_your_inputs">Check your inputs!!!</string>
+    <string name="your_question">Your Question</string>
+    <string name="enter_question">Enter question</string>
+    <string name="input_answers_and_choose_correct_answer">Input answers and choose correct answer</string>
+    <string name="enter_first_answer">Enter first answer</string>
+    <string name="enter_second_answer">Enter second answer</string>
+    <string name="enter_third_answer">Enter third answer</string>
+    <string name="enter_fourth_answer">Enter fourth answer</string>
+    <string name="create_new_question">Create new question</string>
+    <string name="cancel_quest">Cancel quest</string>
+    <string name="done">DONE</string>
+    <string name="quest_name">Quest name</string>
+    <string name="skipthequestion">Skip the question</string>
+    <string name="ywgap">You won\'t got any points!</string>
+    <string name="cancel">Cancel</string>
+    <string name="next">Next</string>
 
 </resources>
