@@ -10,26 +10,31 @@
             android:supportsRtl="true"
             android:theme="@style/AppTheme">
         <activity
+                android:screenOrientation="portrait"
                 android:name=".NewQuestionActivity"
                 android:theme="@style/AppTheme.NoActionBar">
         </activity>
         <activity
+                android:screenOrientation="portrait"
                 android:name=".NewQuestActivity"
                 android:theme="@style/AppTheme.NoActionBar">
         </activity>
-        <activity android:name=".Sign_up">
+        <activity
+                android:screenOrientation="portrait"
+                android:name=".Sign_up">
         </activity>
-        <activity android:name=".Result">
+        <activity
+                android:screenOrientation="portrait" android:name=".Result">
         </activity>
-        <activity android:name=".Question">
+        <activity android:screenOrientation="portrait" android:name=".Question">
         </activity>
-        <activity android:name=".QuestInfo">
+        <activity android:screenOrientation="portrait" android:name=".QuestInfo">
         </activity>
-        <activity android:name=".QuestList">
+        <activity  android:screenOrientation="portrait" android:name=".QuestList">
         </activity>
-        <activity android:name=".Home">
+        <activity android:screenOrientation="portrait" android:name=".Home">
         </activity>
-        <activity android:name=".Start">
+        <activity android:screenOrientation="portrait" android:name=".Start">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
