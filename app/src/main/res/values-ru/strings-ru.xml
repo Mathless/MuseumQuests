@@ -6,7 +6,7 @@
     <string name="welcome_to_museumquests">Добро пожаловать в MuseumQuests</string>
     <string name="enter_your_name">Введите Ваше имя</string>
     <string name="sign_in">Войти</string>
-    <string name="don_t_have_an_account">Нету аккаунта?</string>
+    <string name="don_t_have_an_account">Нет аккаунта?</string>
     <string name="enter_your_name_and_password">Введите своё имя и пароль</string>
     <string name="password">Пароль</string>
     <string name="confirm_your_password">Повторите пароль</string>
@@ -25,6 +25,6 @@
     <string name="place_1">Место : 1</string>
     <string name="go_home">В начало</string>
     <string name="already_have_an_account">Уже есть аккаунт?</string>
-    <string name="click_to_change_language">Нажмите, что сменить язык</string>
+    <string name="click_to_change_language">Сменить язык</string>
     <string name="your_result">Ваш результат</string>
 </resources>
