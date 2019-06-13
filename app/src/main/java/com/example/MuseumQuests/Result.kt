@@ -25,7 +25,6 @@ class Result : AppCompatActivity() {
         textscore.text = "Score : $totalPoints"
 
         setPassedQuest(0)
-        setScore()
 
         Log.d(logTag, "onCreate called")
         gotohomefromresult.setOnClickListener {
@@ -68,6 +67,7 @@ class Result : AppCompatActivity() {
                 if (post != null && post.toString() != questTitle)
                     setPassedQuest(index + 1)
                 else {
+                    setScore()
                     rootRef1.setValue(questTitle)
                     rootRef2.setValue(questTitle_en)
                 }
