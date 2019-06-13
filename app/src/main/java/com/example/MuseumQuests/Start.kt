@@ -1,9 +1,11 @@
 package com.example.MuseumQuests
 
+import android.content.Context
 import android.content.Intent
 import android.content.res.Configuration
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.text.method.PasswordTransformationMethod
 import android.util.DisplayMetrics
 import android.view.GestureDetector
 import android.view.Gravity
@@ -20,14 +22,20 @@ import com.google.firebase.database.ValueEventListener
 import kotlinx.android.synthetic.main.activity_question.*
 import kotlinx.android.synthetic.main.activity_start.*
 import java.util.*
+import android.text.InputType
+import android.widget.EditText
+
+
+
+
 
 class Start : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_start)
-
-        // Смена языка
+        //username.width = password.width
+         //Смена языка
 
 //        val locale = Locale("ru")
 //        Locale.setDefault(locale)
@@ -40,9 +48,20 @@ class Start : AppCompatActivity() {
         password.setOnTouchListener { v, event ->
             det.onTouchEvent(event)
         }*/
-
+        password.setInputType(InputType.TYPE_CLASS_TEXT or InputType.TYPE_TEXT_VARIATION_PASSWORD)
         val displayMetrics = DisplayMetrics()
         windowManager.defaultDisplay.getMetrics(displayMetrics)
+        var ident = true
+
+        glazyk.setOnClickListener {
+            if (!ident)
+                password.setInputType(InputType.TYPE_CLASS_TEXT or InputType.TYPE_TEXT_VARIATION_PASSWORD)
+            else
+                password.setInputType(InputType.TYPE_CLASS_TEXT)
+            ident = !ident
+            val et = findViewById<View>(R.id.password) as EditText
+            et.setSelection(et.text.length)
+        }
 
         buttonStart.setOnClickListener{
             //saveData()

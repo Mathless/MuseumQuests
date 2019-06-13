@@ -27,6 +27,6 @@
     <string name="place_1">PLACE : 1</string>
     <string name="go_home">GO HOME</string>
     <string name="already_have_an_account">Already have an account?</string>
-    <string name="password">password</string>
+    <string name="password">Password</string>
 
 </resources>
