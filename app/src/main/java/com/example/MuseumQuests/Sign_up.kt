@@ -77,9 +77,9 @@ class Sign_up : AppCompatActivity() {
                         ref.child("verification_code").setValue(password).addOnCompleteListener {}
                         ref.child("pointsEarned").setValue("0").addOnCompleteListener {}
                         val builder = AlertDialog.Builder(ctx)
-                        builder.setTitle("New user added!")
-                        builder.setMessage("Username: $name")
-                        builder.setPositiveButton("Sign in"){_, _ ->
+                        builder.setTitle(getString(R.string.newuseradded))
+                        builder.setMessage(getString(R.string.username)+": $name")
+                        builder.setPositiveButton(getString(R.string.signin)){ _, _ ->
                             val intent = Intent(ctx, Start::class.java)
                             startActivity(intent)
                         }

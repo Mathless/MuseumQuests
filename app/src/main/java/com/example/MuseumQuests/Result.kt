@@ -22,7 +22,7 @@ class Result : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_result)
-        textscore.text = "Score : $totalPoints"
+        textscore.text = getString(R.string.score11)+ ": $totalPoints"
 
         setPassedQuest(0)
 
@@ -61,7 +61,7 @@ class Result : AppCompatActivity() {
 
                 if (post != null && post.toString() == questTitle) {
                     totalPoints = 0
-                    Toast.makeText(getApplicationContext(),"You have already passed this quest!\nYou will not gain any points", Toast.LENGTH_LONG).show()
+                    Toast.makeText(getApplicationContext(),getString(R.string.gotand), Toast.LENGTH_LONG).show()
                 }
 
                 if (post != null && post.toString() != questTitle)

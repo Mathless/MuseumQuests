@@ -136,7 +136,7 @@ class Start : AppCompatActivity() {
 
     fun showToastWrongData(){
         val toast : Toast = Toast.makeText(getApplicationContext(),
-        "Wrong username or password!",
+        getString(R.string.wronguor),
         Toast.LENGTH_SHORT)
         toast.show()
     }

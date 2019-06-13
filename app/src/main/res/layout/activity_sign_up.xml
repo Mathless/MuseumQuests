@@ -12,7 +12,8 @@
               android:gravity="center"
                 android:padding="8dp"
               android:descendantFocusability="beforeDescendants"
-              android:focusableInTouchMode="true">
+              android:focusableInTouchMode="true"
+                android:layout_gravity="center">
 
     <ImageView
             android:layout_width="wrap_content"

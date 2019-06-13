@@ -11,12 +11,14 @@
                   android:orientation="vertical"
                   android:gravity="center"
                   android:padding="8dp"
+                  android:layout_gravity="center"
                   android:descendantFocusability="beforeDescendants"
                   android:focusableInTouchMode="true">
 
         <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="100dp"
+                android:layout_margin="16dp"
                 android:id="@+id/imageViewa"
                 android:src="@drawable/mueseum"/>
         <TextView android:layout_width="match_parent"

@@ -68,7 +68,7 @@ class Home : AppCompatActivity(){
 
         checkScore()
         checkPlace(0)
-        username.text = "username: $username_current"
+        username.text = getString(R.string.usernam)+ " $username_current"
 
         Log.d(logTag, "onCreate called")
         gotoquestlist.setOnClickListener {
@@ -79,13 +79,13 @@ class Home : AppCompatActivity(){
             //Диалоговое окно с потверждением выхода
 
             val builder = AlertDialog.Builder(this)
-            builder.setTitle("Sign out")
-            builder.setMessage("Are you sure you want to sign out?")
-            builder.setPositiveButton("Sign out"){_, _ ->
+            builder.setTitle(getString(R.string.so))
+            builder.setMessage(getString(R.string.arusur))
+            builder.setPositiveButton(getString(R.string.so)){_, _ ->
                 val intent = Intent(this, Start::class.java)
                 startActivity(intent)
             }
-            builder.setNeutralButton("Cancel"){_,_->}
+            builder.setNeutralButton(getString(R.string.cancel)){_,_->}
             val dialog: AlertDialog = builder.create()
             dialog.show()
 
@@ -106,7 +106,7 @@ class Home : AppCompatActivity(){
             }
             override fun onDataChange(p0: DataSnapshot) {
                 val post = p0.getValue(String::class.java).toString()
-                textscorehome.text = "SCORE : $post"
+                textscorehome.text = getString(R.string.score)+" $post"
                 score = post.toInt()
             }
         })
@@ -121,7 +121,7 @@ class Home : AppCompatActivity(){
             override fun onDataChange(p0: DataSnapshot) {
                 val post = p0.getValue(String::class.java)
                 if (post == null)
-                    textplacehome.text = "PLACE : $place"
+                    textplacehome.text = getString(R.string.place)+ " $place"
                 else {
                     if (post.toInt() > score)
                         place++
@@ -191,7 +191,7 @@ class Home : AppCompatActivity(){
                     startActivity(intent)
                 }
                 else
-                    Toast.makeText(getApplicationContext(),"You have don't have permissions for this!\nIf you want to create quests contact us by email", Toast.LENGTH_LONG).show()
+                    Toast.makeText(getApplicationContext(),getString(R.string.donthavepermis), Toast.LENGTH_LONG).show()
             }
         })
     }

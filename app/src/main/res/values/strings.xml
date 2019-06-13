@@ -52,5 +52,17 @@
     <string name="passatleast">Password must have at least 4 characters!</string>
     <string name="alrexi">This username already exists!</string>
     <string name="create_quest">Create quest</string>
+    <string name="newuseradded">New user added!</string>
+    <string name="signin">Sign in</string>
+    <string name="username">Username</string>
+    <string name="wronguor">Wrong username or password!</string>
+    <string name="score11">Score</string>
+    <string name="usernam">username:</string>
+    <string name="so">Sign out</string>
+    <string name="arusur">Are you sure you want to sign out?</string>
+    <string name="donthavepermis">You have don\'t have permissions for this!\nIf you want to create quests contact us by
+        email
+    </string>
+    <string name="gotand">You have already passed this quest!\nYou will not gain any points</string>
 
 </resources>

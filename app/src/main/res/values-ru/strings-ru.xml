@@ -51,4 +51,15 @@
     <string name="passatleast">Пароль должен состоять как минимум из 4 символов!</string>
     <string name="alrexi">Такое имя пользователя уже существует!</string>
     <string name="create_quest">Создать квест</string>
+    <string name="newuseradded">Ура! Вы с нами!</string>
+    <string name="signin">Войти</string>
+    <string name="username">Имя</string>
+    <string name="wronguor">Неверное имя пользователя или пароль!</string>
+    <string name="score11">Счёт</string>
+    <string name="usernam">Имя:</string>
+    <string name="so">Выйти</string>
+    <string name="arusur">Вы уверены, что хотите выйти?</string>
+    <string name="donthavepermis">У вас нету прав для этого!\nЕсли вы хотите стать создателем квестов,\n то напишите нам на mrkalumba@gmail.com
+    </string>
+    <string name="gotand">Вы уже прошли этот квест!\n поэтому вы не получаете за него очков.</string>
 </resources>
