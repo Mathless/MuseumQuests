@@ -14,6 +14,7 @@ import android.widget.AdapterView.OnItemSelectedListener
 import com.example.MuseumQuests.QuestInfo.Companion.id_current
 import com.example.MuseumQuests.QuestInfo.Companion.language
 import com.example.MuseumQuests.QuestInfo.Companion.pathQuests
+import com.example.MuseumQuests.QuestInfo.Companion.quests_lang
 import com.example.MuseumQuests.QuestInfo.Companion.username_current
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
@@ -29,26 +30,13 @@ class Home : AppCompatActivity(){
     val logTag = "DEMO_TAG"
     var score = 0
     var place = 1
+    val rootRef1 = FirebaseDatabase.getInstance().getReference("people/$id_current/language")
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
 
-        val rootRef1 = FirebaseDatabase.getInstance().getReference("people/$id_current/language")
-        rootRef1.addValueEventListener(object : ValueEventListener {
-            override fun onCancelled(p0: DatabaseError) {
-                println("not implemented")
-            }
-            override fun onDataChange(p0: DataSnapshot) {
-                val post = p0.getValue(String::class.java)
-                var post1 = post.toString()
-                if (post == null)
-                    post1 = "default"
-                language = post1
-                val locale = Locale(language)
-                Locale.setDefault(locale)
-                val configuration = Configuration()
-                configuration.locale = locale
-                baseContext.resources.updateConfiguration(configuration, null)
+
                 if (texthome.text == "HOME") {
                     language = "en"
                     pathQuests = "quests-en"
@@ -58,8 +46,8 @@ class Home : AppCompatActivity(){
                     pathQuests = "quests"
                     setValToListByPath("people/$id_current/quests_passed", 0, this@Home)
                 }
-            }
-        })
+
+
         //Кнопка смены языка
         button_changelanguage.setOnClickListener {
             if (language == "ru")
@@ -102,6 +90,7 @@ class Home : AppCompatActivity(){
 
         }
         createNew.setOnClickListener{
+            quests_lang = pathQuests
             chechPerm(this)
         }
 

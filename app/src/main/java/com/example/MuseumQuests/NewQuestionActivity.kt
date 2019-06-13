@@ -11,6 +11,9 @@ import com.example.MuseumQuests.Home.Companion.new_quest_questions
 import com.example.MuseumQuests.Home.Companion.new_quest_question
 import com.example.MuseumQuests.Home.Companion.new_quest_title
 import com.example.MuseumQuests.Home.Companion.size
+import com.example.MuseumQuests.QuestInfo.Companion.criteria
+import com.example.MuseumQuests.QuestInfo.Companion.language
+import com.example.MuseumQuests.QuestInfo.Companion.quests_lang
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
@@ -34,8 +37,18 @@ class NewQuestionActivity : AppCompatActivity() {
         button_done.setOnClickListener {
             setData(0)
             addQuestion()
-            val intent = Intent(this, Home::class.java)
-            startActivity(intent)
+            if (criteria) {
+                if (language == "en")
+                    quests_lang = "quests"
+                else quests_lang = "quests-en"
+                val intent = Intent(this, Home::class.java)
+                startActivity(intent)
+            }
+            else {
+                criteria = true
+                val intent = Intent(this, NewQuestActivity::class.java)
+                startActivity(intent)
+            }
         }
         button_blin.setOnClickListener {
             val builder = AlertDialog.Builder(this)
@@ -52,8 +65,8 @@ class NewQuestionActivity : AppCompatActivity() {
     }
 
     fun setData(id : Int){
-        val root = FirebaseDatabase.getInstance().getReference("museums/quests/$id/title")
-        val root1 = FirebaseDatabase.getInstance().getReference("museums/quests/$id")
+        val root = FirebaseDatabase.getInstance().getReference("museums/$quests_lang/$id/title")
+        val root1 = FirebaseDatabase.getInstance().getReference("museums/$quests_lang/$id")
         root.addListenerForSingleValueEvent(object : ValueEventListener {
             override fun onCancelled(p0: DatabaseError) {
                 println("not implemented")

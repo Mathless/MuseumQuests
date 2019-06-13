@@ -24,9 +24,8 @@ import kotlinx.android.synthetic.main.activity_start.*
 import java.util.*
 import android.text.InputType
 import android.widget.EditText
-
-
-
+import kotlinx.android.synthetic.main.activity_home.*
+import kotlinx.android.synthetic.main.activity_start.username
 
 
 class Start : AppCompatActivity() {
@@ -99,8 +98,29 @@ class Start : AppCompatActivity() {
                             }
                             override fun onDataChange(p1: DataSnapshot) {
                                 val post1 = p1.getValue(String::class.java).toString()
-                                if (post1 == password)
-                                    startActivity(intent)
+                                if (post1 == password) {
+
+                                    val rootRef1 = FirebaseDatabase.getInstance().getReference("people/$id_current/language")
+                                    rootRef1.addValueEventListener(object : ValueEventListener {
+                                        override fun onCancelled(p0: DatabaseError) {
+                                            println("not implemented")
+                                        }
+                                        override fun onDataChange(p0: DataSnapshot) {
+                                            val post = p0.getValue(String::class.java)
+                                            var post1 = post.toString()
+                                            if (post == null)
+                                                post1 = "default"
+                                            QuestInfo.language = post1
+                                            val locale = Locale(QuestInfo.language)
+                                            Locale.setDefault(locale)
+                                            val configuration = Configuration()
+                                            configuration.locale = locale
+                                            baseContext.resources.updateConfiguration(configuration, null)
+                                            startActivity(intent)
+                                        }
+                                    })
+
+                                }
                                 else
                                     showToastWrongData()
                             }

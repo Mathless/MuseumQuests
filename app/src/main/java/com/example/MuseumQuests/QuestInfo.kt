@@ -24,6 +24,8 @@ class QuestInfo : AppCompatActivity() {
         var questTitle_en = " "
         var language = "default"
         var pathQuests : String = "quests"
+        var criteria = false
+        var quests_lang = ""
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
