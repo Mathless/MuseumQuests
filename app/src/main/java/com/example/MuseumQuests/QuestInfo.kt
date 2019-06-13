@@ -24,7 +24,7 @@ class QuestInfo : AppCompatActivity() {
         var questTitle_en = " "
         var language = "default"
         var pathQuests : String = "quests"
-        var criteria = false
+        var criteria = true
         var quests_lang = ""
     }
 

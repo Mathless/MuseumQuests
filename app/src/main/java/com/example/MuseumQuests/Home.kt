@@ -11,6 +11,7 @@ import android.util.Log
 import android.view.View
 import android.widget.*
 import android.widget.AdapterView.OnItemSelectedListener
+import com.example.MuseumQuests.QuestInfo.Companion.criteria
 import com.example.MuseumQuests.QuestInfo.Companion.id_current
 import com.example.MuseumQuests.QuestInfo.Companion.language
 import com.example.MuseumQuests.QuestInfo.Companion.pathQuests
@@ -90,6 +91,7 @@ class Home : AppCompatActivity(){
 
         }
         createNew.setOnClickListener{
+            criteria = true
             quests_lang = pathQuests
             chechPerm(this)
         }
@@ -172,6 +174,8 @@ class Home : AppCompatActivity(){
             var answer_options = answer_options
         }
         var new_quest_questions = Array<new_quest_question>(100){new_quest_question(" "," ", Array(4){" "})}
+        var new_quest_questions2 = Array<new_quest_question>(100){new_quest_question(" "," ", Array(4){" "})}
+        var k = 0
     }
 
     fun chechPerm(ctx : Context){

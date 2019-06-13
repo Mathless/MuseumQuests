@@ -6,9 +6,11 @@ import android.support.v7.app.AlertDialog
 import android.support.v7.app.AppCompatActivity;
 import android.widget.RadioButton
 import android.widget.Toast
+import com.example.MuseumQuests.Home.Companion.k
 import com.example.MuseumQuests.Home.Companion.new_quest_description
 import com.example.MuseumQuests.Home.Companion.new_quest_questions
 import com.example.MuseumQuests.Home.Companion.new_quest_question
+import com.example.MuseumQuests.Home.Companion.new_quest_questions2
 import com.example.MuseumQuests.Home.Companion.new_quest_title
 import com.example.MuseumQuests.Home.Companion.size
 import com.example.MuseumQuests.QuestInfo.Companion.criteria
@@ -30,14 +32,25 @@ class NewQuestionActivity : AppCompatActivity() {
         setContentView(R.layout.activity_new_question)
 
         button_makequestion2.setOnClickListener {
-            addQuestion()
+            if (criteria)
+                addQuestion(new_quest_questions)
+            else addQuestion(new_quest_questions2)
             val intent = Intent(this, NewQuestionActivity::class.java)
             startActivity(intent)
         }
         button_done.setOnClickListener {
-            setData(0)
-            addQuestion()
             if (criteria) {
+                setData(0, new_quest_questions)
+                addQuestion(new_quest_questions)
+            }
+            else {
+                addQuestion(new_quest_questions2)
+                setData(0, new_quest_questions2)
+            }
+
+
+
+            if (!criteria) {
                 if (language == "en")
                     quests_lang = "quests"
                 else quests_lang = "quests-en"
@@ -45,11 +58,16 @@ class NewQuestionActivity : AppCompatActivity() {
                 startActivity(intent)
             }
             else {
-                criteria = true
+                criteria = false
+                size = 0
                 val intent = Intent(this, NewQuestActivity::class.java)
+                Toast.makeText(getApplicationContext(),"Translate the quest now!", Toast.LENGTH_LONG).show()
+
                 startActivity(intent)
             }
         }
+
+        if (!criteria) button_blin.isEnabled = false
         button_blin.setOnClickListener {
             val builder = AlertDialog.Builder(this)
             builder.setTitle("Cancel creating")
@@ -62,9 +80,27 @@ class NewQuestionActivity : AppCompatActivity() {
             val dialog: AlertDialog = builder.create()
             dialog.show()
         }
+
+        if (!criteria){
+            newquestion.hint = new_quest_questions[k].question
+            questionanswer1.hint = new_quest_questions[k].answer_options[0]
+            questionanswer2.hint = new_quest_questions[k].answer_options[1]
+            questionanswer3.hint = new_quest_questions[k].answer_options[2]
+            questionanswer4.hint = new_quest_questions[k].answer_options[3]
+            for (i in 0..3)
+                if (new_quest_questions[k].correct_answer == new_quest_questions[k].answer_options[i])
+                    when {
+                        i == 0 -> correctanswer1.isChecked = true
+                        i == 1 -> correctanswer2.isChecked = true
+                        i == 2 -> correctanswer3.isChecked = true
+                        i == 3 -> correctanswer4.isChecked = true
+                    }
+            k++
+        }
+
     }
 
-    fun setData(id : Int){
+    fun setData(id : Int, new_quest_questions : Array<new_quest_question>){
         val root = FirebaseDatabase.getInstance().getReference("museums/$quests_lang/$id/title")
         val root1 = FirebaseDatabase.getInstance().getReference("museums/$quests_lang/$id")
         root.addListenerForSingleValueEvent(object : ValueEventListener {
@@ -74,9 +110,8 @@ class NewQuestionActivity : AppCompatActivity() {
             override fun onDataChange(p0: DataSnapshot) {
                 val post = p0.getValue(String::class.java)
                 if (post != null)
-                    setData(id + 1)
+                    setData(id + 1, new_quest_questions)
                 else {
-                    println("GO $new_quest_title")
 
                     root1.child("title").setValue(new_quest_title).addOnCompleteListener {}
                     root1.child("description").setValue(new_quest_description).addOnCompleteListener {}
@@ -100,7 +135,7 @@ class NewQuestionActivity : AppCompatActivity() {
     }
 
 
-    fun addQuestion(){
+    fun addQuestion(new_quest_questions : Array<new_quest_question>){
 
         if (newquestion.text.toString() == " " || questionanswer1.text.toString() == " ")
             return
@@ -108,10 +143,10 @@ class NewQuestionActivity : AppCompatActivity() {
         var correct : String = ""
 
         when {
-            radio_group.checkedRadioButtonId == 2131230784 -> correct = questionanswer1.text.toString()
-            radio_group.checkedRadioButtonId == 2131230785 -> correct = questionanswer2.text.toString()
-            radio_group.checkedRadioButtonId == 2131230786 -> correct = questionanswer3.text.toString()
-            radio_group.checkedRadioButtonId == 2131230787 -> correct = questionanswer4.text.toString()
+            correctanswer1.isChecked -> correct = questionanswer1.text.toString()
+            correctanswer2.isChecked -> correct = questionanswer2.text.toString()
+            correctanswer3.isChecked -> correct = questionanswer3.text.toString()
+            correctanswer4.isChecked -> correct = questionanswer4.text.toString()
         }
 
         new_quest_questions[size].question = newquestion.text.toString()
