@@ -95,8 +95,7 @@ class Home : AppCompatActivity(){
 
         }
         createNew.setOnClickListener{
-            val intent = Intent(this, NewQuestActivity::class.java)
-            startActivity(intent)
+            chechPerm(this)
         }
 
     }
@@ -179,6 +178,23 @@ class Home : AppCompatActivity(){
         var new_quest_questions = Array<new_quest_question>(100){new_quest_question(" "," ", Array(4){" "})}
     }
 
+    fun chechPerm(ctx : Context){
+        val rootRef1 = FirebaseDatabase.getInstance().getReference("people/$id_current/moderator")
+        rootRef1.addValueEventListener(object : ValueEventListener {
+            override fun onCancelled(p0: DatabaseError) {
+                println("not implemented")
+            }
+            override fun onDataChange(p0: DataSnapshot) {
+                val post = p0.getValue(String::class.java)
+                if (post.toString() == "true") {
+                    val intent = Intent(ctx, NewQuestActivity::class.java)
+                    startActivity(intent)
+                }
+                else
+                    Toast.makeText(getApplicationContext(),"You have don't have permissions for this!\nIf you want to create quests contact us by email", Toast.LENGTH_LONG).show()
+            }
+        })
+    }
 
 }
 
