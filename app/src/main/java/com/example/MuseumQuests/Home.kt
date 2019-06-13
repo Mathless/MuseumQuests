@@ -34,17 +34,11 @@ class Home : AppCompatActivity() {
         //Кнопка смены языка
         button_changelanguage.setOnClickListener{
             val locale = Locale("en")
-        Locale.setDefault(locale)
-        val configuration = Configuration()
-        configuration.locale = locale
-        baseContext.resources.updateConfiguration(configuration, null)
-
+            Locale.setDefault(locale)
+            val configuration = Configuration()
+            configuration.locale = locale
+            baseContext.resources.updateConfiguration(configuration, null)
         }
-
-
-
-
-
 
         checkScore()
         checkPlace(0)
@@ -141,8 +135,8 @@ class Home : AppCompatActivity() {
     }
     companion object {
         var size = 0
-        var new_quest_title = " "
-        var new_quest_description = " "
+        var new_quest_title = "x"
+        var new_quest_description = "x"
         class new_quest_question (
             question : String,
             correct_answer : String,

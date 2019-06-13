@@ -5,11 +5,11 @@ import android.content.res.Configuration
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.util.DisplayMetrics
+import android.view.GestureDetector
 import android.view.Gravity
-import android.widget.ArrayAdapter
-import android.widget.ListAdapter
-import android.widget.TextView
-import android.widget.Toast
+import android.view.MotionEvent
+import android.view.View
+import android.widget.*
 import com.example.MuseumQuests.QuestInfo.Companion.id_current
 import com.example.MuseumQuests.QuestInfo.Companion.points_current
 import com.example.MuseumQuests.QuestInfo.Companion.username_current
@@ -19,7 +19,6 @@ import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
 import kotlinx.android.synthetic.main.activity_question.*
 import kotlinx.android.synthetic.main.activity_start.*
-import android.widget.RelativeLayout
 import java.util.*
 
 class Start : AppCompatActivity() {
@@ -36,13 +35,11 @@ class Start : AppCompatActivity() {
 //        configuration.locale = locale
 //        baseContext.resources.updateConfiguration(configuration, null)
 
-
-
-
-
-
-
-
+        /*val sas = Sas(password)
+        val det = GestureDetector(this, sas)
+        password.setOnTouchListener { v, event ->
+            det.onTouchEvent(event)
+        }*/
 
         val displayMetrics = DisplayMetrics()
         windowManager.defaultDisplay.getMetrics(displayMetrics)
@@ -104,4 +101,21 @@ class Start : AppCompatActivity() {
         Toast.LENGTH_SHORT)
         toast.show()
     }
+
+
+
 }
+/*
+class Sas(private val password: EditText) : GestureDetector.SimpleOnGestureListener() {
+    override fun onDown(e: MotionEvent?): Boolean {
+        return true
+    }
+
+    override fun onLongPress(e: MotionEvent?) {
+        super.onLongPress(e)
+    }
+
+    override fun onSingleTapUp(e: MotionEvent?): Boolean {
+        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+    }
+}*/

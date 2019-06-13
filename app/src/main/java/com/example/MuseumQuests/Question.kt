@@ -152,7 +152,7 @@ class Question : AppCompatActivity() {
             override fun onDataChange(p0: DataSnapshot) {
                 val post = p0.getValue(String::class.java)
                 for (k in 0..3) {
-                    if ( (text_list.getChildAt(k) as TextView).text  == post) {
+                    if ( (text_list.getChildAt(k) as TextView).text == post) {
                         text_list.getChildAt(idClicked).setBackgroundResource(R.drawable.rectangle_warning)
                         text_list.getChildAt(k).setBackgroundResource(R.drawable.rectangle_correct)
                     }

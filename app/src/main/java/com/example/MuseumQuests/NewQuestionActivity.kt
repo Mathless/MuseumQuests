@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.support.v7.app.AlertDialog
 import android.support.v7.app.AppCompatActivity;
+import android.widget.RadioButton
 import android.widget.Toast
 import com.example.MuseumQuests.Home.Companion.new_quest_description
 import com.example.MuseumQuests.Home.Companion.new_quest_questions
@@ -30,7 +31,6 @@ class NewQuestionActivity : AppCompatActivity() {
         }
         button_done.setOnClickListener {
             setData(0)
-
             addQuestion()
             val intent = Intent(this, Home::class.java)
             startActivity(intent)
@@ -49,13 +49,15 @@ class NewQuestionActivity : AppCompatActivity() {
                 if (post != null)
                     setData(id + 1)
                 else {
+                    println("GO $new_quest_title")
+
                     root1.child("title").setValue(new_quest_title).addOnCompleteListener {}
                     root1.child("description").setValue(new_quest_description).addOnCompleteListener {}
 
                     for (i in 0..size) {
                         if (new_quest_questions[i].question != "" && new_quest_questions[i].question != " ") {
                             for (j in 0..3)
-                                root1.child("questions").child("$i").child("answer_options").child("$j").setValue(
+                                root1.child("questions").child("$i").child("answers_options").child("$j").setValue(
                                     new_quest_questions[i].answer_options[j]
                                 ).addOnCompleteListener {}
                             root1.child("questions").child("$i").child("correct_answer")
@@ -70,6 +72,7 @@ class NewQuestionActivity : AppCompatActivity() {
         })
     }
 
+
     fun addQuestion(){
 
         if (newquestion.text.toString() == " " || questionanswer1.text.toString() == " ")
@@ -77,14 +80,11 @@ class NewQuestionActivity : AppCompatActivity() {
 
         var correct : String = ""
 
-        radio_group.setOnClickListener {
-            println(radio_group.checkedRadioButtonId)
-            when {
-                radio_group.checkedRadioButtonId == 2131230784 -> correct = questionanswer1.text.toString()
-                radio_group.checkedRadioButtonId == 2131230785 -> correct = questionanswer2.text.toString()
-                radio_group.checkedRadioButtonId == 2131230786 -> correct = questionanswer3.text.toString()
-                radio_group.checkedRadioButtonId == 2131230787 -> correct = questionanswer4.text.toString()
-            }
+        when {
+            radio_group.checkedRadioButtonId == 2131230784 -> correct = questionanswer1.text.toString()
+            radio_group.checkedRadioButtonId == 2131230785 -> correct = questionanswer2.text.toString()
+            radio_group.checkedRadioButtonId == 2131230786 -> correct = questionanswer3.text.toString()
+            radio_group.checkedRadioButtonId == 2131230787 -> correct = questionanswer4.text.toString()
         }
 
         new_quest_questions[size].question = newquestion.text.toString()

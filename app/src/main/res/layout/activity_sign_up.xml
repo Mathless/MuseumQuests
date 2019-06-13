@@ -32,6 +32,7 @@
               android:gravity="center_horizontal"
               android:id="@+id/username"
               android:layout_marginVertical="24dp"
+              android:inputType="textPassword"
     />
     <EditText android:layout_width="match_parent" android:layout_height="wrap_content"
               android:focusable="true"
@@ -47,6 +48,7 @@
               android:layout_marginVertical="4dp"
               android:gravity="center_horizontal"
               android:id="@+id/password_signup2"
+              android:inputType="textPassword"
     />
     <Button android:layout_width="match_parent" android:layout_height="wrap_content"
             android:background="@drawable/button_start"
