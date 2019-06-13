@@ -19,6 +19,8 @@ import org.w3c.dom.Text
 
 class Question : AppCompatActivity() {
 
+    override fun onBackPressed() {}
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_question)

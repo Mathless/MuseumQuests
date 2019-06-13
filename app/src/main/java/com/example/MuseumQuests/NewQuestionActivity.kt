@@ -20,6 +20,8 @@ import kotlinx.android.synthetic.main.activity_new_question.*
 
 class NewQuestionActivity : AppCompatActivity() {
 
+    override fun onBackPressed() {}
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_new_question)
