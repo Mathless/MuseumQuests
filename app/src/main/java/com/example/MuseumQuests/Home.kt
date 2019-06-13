@@ -93,7 +93,7 @@ class Home : AppCompatActivity(){
         createNew.setOnClickListener{
             criteria = true
             quests_lang = pathQuests
-            chechPerm(this)
+            checkPerm(this)
         }
 
     }
@@ -178,7 +178,7 @@ class Home : AppCompatActivity(){
         var k = 0
     }
 
-    fun chechPerm(ctx : Context){
+    fun checkPerm(ctx : Context){
         val rootRef1 = FirebaseDatabase.getInstance().getReference("people/$id_current/moderator")
         rootRef1.addValueEventListener(object : ValueEventListener {
             override fun onCancelled(p0: DatabaseError) {
