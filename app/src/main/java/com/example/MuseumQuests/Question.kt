@@ -58,6 +58,9 @@ class Question : AppCompatActivity() {
                 checkAnswer(answerGiven, 10, "museums/quests/$i/questions/$j/correct_answer")
                 isChecked = true
                 button_check.text = "Next"
+                button_skip.setEnabled(false);
+                button_skip.setBackgroundColor(0)
+
             }
         }
 
