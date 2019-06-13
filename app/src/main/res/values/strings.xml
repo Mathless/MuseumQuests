@@ -44,7 +44,7 @@
     <string name="done">DONE</string>
     <string name="quest_name">Quest name</string>
     <string name="skipthequestion">Skip the question</string>
-    <string name="ywgap">You won\'t got any points!</string>
+    <string name="ywgap">You won\'t get any points!</string>
     <string name="cancel">Cancel</string>
     <string name="next">Next</string>
     <string name="pasdontmatch">Passwords don\'t match</string>

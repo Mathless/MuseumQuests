@@ -7,6 +7,7 @@ import android.os.Bundle
 import android.widget.ArrayAdapter
 import android.widget.ListAdapter
 import android.widget.TextView
+import com.example.MuseumQuests.QuestInfo.Companion.language
 import com.example.MuseumQuests.QuestInfo.Companion.totalPoints
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
@@ -21,7 +22,10 @@ class QuestList : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_quest_list)
 
-        setValToListByPath("museums/quests/", 0, this) // заполнение листа с вариантами ответов
+        if (language == "en")
+            setValToListByPath("museums/quests-en/", 0, this) // заполнение листа с вариантами ответов
+        else
+            setValToListByPath("museums/quests/", 0, this)
 
         quest_list.setOnItemClickListener{
             _, view, index, _ ->

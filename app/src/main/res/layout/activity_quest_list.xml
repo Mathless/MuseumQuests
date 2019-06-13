@@ -10,11 +10,10 @@
 
     <TextView android:layout_width="wrap_content"
               android:layout_height="wrap_content"
-                android:text="@string/tap_on_quest"
+              android:text="@string/tap_on_quest"
               android:textColor="@color/black"
               android:textSize="32sp"
-                android:textStyle="bold"/>
-
+              android:textStyle="bold"/>
 
         <ListView
                 android:layout_width="match_parent"

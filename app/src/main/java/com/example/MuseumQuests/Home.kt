@@ -12,6 +12,8 @@ import android.view.View
 import android.widget.*
 import android.widget.AdapterView.OnItemSelectedListener
 import com.example.MuseumQuests.QuestInfo.Companion.id_current
+import com.example.MuseumQuests.QuestInfo.Companion.language
+import com.example.MuseumQuests.QuestInfo.Companion.pathQuests
 import com.example.MuseumQuests.QuestInfo.Companion.username_current
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
@@ -31,48 +33,53 @@ class Home : AppCompatActivity(){
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
 
-        //Кнопка смены языка
-        var language : String
-
-
-        button_changelanguage.setOnClickListener {
-            if (texthome.text == "HOME") {
-                language = "ru"
-            } else {
-                language = "default"
+        val rootRef1 = FirebaseDatabase.getInstance().getReference("people/$id_current/language")
+        rootRef1.addValueEventListener(object : ValueEventListener {
+            override fun onCancelled(p0: DatabaseError) {
+                println("not implemented")
             }
+            override fun onDataChange(p0: DataSnapshot) {
+                val post = p0.getValue(String::class.java)
+                var post1 = post.toString()
+                if (post == null)
+                    post1 = "default"
+                language = post1
+                val locale = Locale(language)
+                Locale.setDefault(locale)
+                val configuration = Configuration()
+                configuration.locale = locale
+                baseContext.resources.updateConfiguration(configuration, null)
+                if (texthome.text == "HOME") {
+                    language = "en"
+                    pathQuests = "quests-en"
+                    setValToListByPath("people/$id_current/quests_passed-en", 0, this@Home)
+                } else {
+                    language = "ru"
+                    pathQuests = "quests"
+                    setValToListByPath("people/$id_current/quests_passed", 0, this@Home)
+                }
+            }
+        })
+        //Кнопка смены языка
+        button_changelanguage.setOnClickListener {
+            if (language == "ru")
+                language = "en"
+            else language = "ru"
+
+            rootRef1.setValue(language).addOnCompleteListener {}
             val locale = Locale(language)
-        Locale.setDefault(locale)
-        val configuration = Configuration()
-        configuration.locale = locale
-        baseContext.resources.updateConfiguration(configuration, null)
+            Locale.setDefault(locale)
+            val configuration = Configuration()
+            configuration.locale = locale
+            baseContext.resources.updateConfiguration(configuration, null)
 
             val intent = Intent(this, Home::class.java)
             startActivity(intent)
         }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
         checkScore()
         checkPlace(0)
         username.text = "username: $username_current"
-        setValToListByPath("people/$id_current/quests_passed", 0, this)
 
         Log.d(logTag, "onCreate called")
         gotoquestlist.setOnClickListener {

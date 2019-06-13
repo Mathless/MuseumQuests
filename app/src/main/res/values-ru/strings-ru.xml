@@ -43,7 +43,7 @@
     <string name="done">ГОТОВО</string>
     <string name="quest_name">Имя квеста</string>
     <string name="skipthequestion">Пропустить вопрос</string>
-    <string name="ywgap">You won\'t got any points!</string>
+    <string name="ywgap">You won\'t get any points!</string>
     <string name="cancel">Отменить</string>
     <string name="next">Дальше</string>
     <string name="pasdontmatch">Пароли не совпвадают</string>

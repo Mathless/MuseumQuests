@@ -9,6 +9,7 @@ import android.widget.ArrayAdapter
 import android.widget.ListAdapter
 import android.widget.ListView
 import android.widget.TextView
+import com.example.MuseumQuests.QuestInfo.Companion.pathQuests
 import com.example.MuseumQuests.QuestInfo.Companion.totalPoints
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
@@ -32,8 +33,8 @@ class Question : AppCompatActivity() {
         val i = intent.getIntExtra(QuestInfo.KEY_QUEST_NUM, 0)
         val j = intent.getIntExtra(QuestInfo.KEY_QUESTION_NUM, 0)
 
-        setValByPath("museums/quests/$i/questions/$j/question", text_question) // заполнение поля с вопросом
-        setValToListByPath("museums/quests/$i/questions/$j/answers_options/", 0, this) // заполнение листа с вариантами ответов
+        setValByPath("museums/$pathQuests/$i/questions/$j/question", text_question) // заполнение поля с вопросом
+        setValToListByPath("museums/$pathQuests/$i/questions/$j/answers_options/", 0, this) // заполнение листа с вариантами ответов
 
         text_list.setOnItemClickListener{
                 _, view, index, _ ->
@@ -56,8 +57,8 @@ class Question : AppCompatActivity() {
                 for(k in 0..3)
                     text_list.getChildAt(k).setBackgroundResource(R.drawable.rectangle_warning)
             else {
-                showRightAnswer("museums/quests/$i/questions/$j/correct_answer", text_list, idClicked)
-                checkAnswer(answerGiven, 10, "museums/quests/$i/questions/$j/correct_answer")
+                showRightAnswer("museums/$pathQuests/$i/questions/$j/correct_answer", text_list, idClicked)
+                checkAnswer(answerGiven, 10, "museums/$pathQuests/$i/questions/$j/correct_answer")
                 isChecked = true
                 button_check.text = getString(R.string.next)
                 button_skip.setEnabled(false);
@@ -81,7 +82,7 @@ class Question : AppCompatActivity() {
     }
 
     fun checkWhereToGo(i : Int, j : Int) {
-        val rootRef = FirebaseDatabase.getInstance().getReference("museums/quests/$i/questions/${j + 1}/question")
+        val rootRef = FirebaseDatabase.getInstance().getReference("museums/$pathQuests/$i/questions/${j + 1}/question")
         rootRef.addValueEventListener(object : ValueEventListener {
             override fun onCancelled(p0: DatabaseError) {
                 println("not implemented")

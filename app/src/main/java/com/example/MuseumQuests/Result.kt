@@ -7,6 +7,7 @@ import android.util.Log
 import android.widget.Toast
 import com.example.MuseumQuests.QuestInfo.Companion.id_current
 import com.example.MuseumQuests.QuestInfo.Companion.questTitle
+import com.example.MuseumQuests.QuestInfo.Companion.questTitle_en
 import com.example.MuseumQuests.QuestInfo.Companion.totalPoints
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
@@ -51,6 +52,7 @@ class Result : AppCompatActivity() {
 
     fun setPassedQuest(index : Int){
         val rootRef1 = FirebaseDatabase.getInstance().getReference("people/$id_current/quests_passed/$index")
+        val rootRef2 = FirebaseDatabase.getInstance().getReference("people/$id_current/quests_passed-en/$index")
         rootRef1.addListenerForSingleValueEvent(object : ValueEventListener {
             override fun onCancelled(p0: DatabaseError) {
                 println("not implemented")
@@ -66,7 +68,8 @@ class Result : AppCompatActivity() {
                 if (post != null && post.toString() != questTitle)
                     setPassedQuest(index + 1)
                 else {
-                    rootRef1.setValue("$questTitle")
+                    rootRef1.setValue(questTitle)
+                    rootRef2.setValue(questTitle_en)
                 }
             }
         })
