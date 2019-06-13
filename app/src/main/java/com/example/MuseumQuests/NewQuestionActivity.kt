@@ -37,6 +37,18 @@ class NewQuestionActivity : AppCompatActivity() {
             val intent = Intent(this, Home::class.java)
             startActivity(intent)
         }
+        button_blin.setOnClickListener {
+            val builder = AlertDialog.Builder(this)
+            builder.setTitle("Cancel creating")
+            builder.setMessage("Are you sure you want to cancel creating?")
+            builder.setPositiveButton("Delete quest"){_, _ ->
+                val intent = Intent(this, Home::class.java)
+                startActivity(intent)
+            }
+            builder.setNeutralButton("Cancel"){_,_->}
+            val dialog: AlertDialog = builder.create()
+            dialog.show()
+        }
     }
 
     fun setData(id : Int){
