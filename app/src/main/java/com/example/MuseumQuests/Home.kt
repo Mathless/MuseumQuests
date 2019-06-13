@@ -8,10 +8,9 @@ import android.os.Bundle
 import android.support.v7.app.AlertDialog
 import android.util.DisplayMetrics
 import android.util.Log
-import android.widget.ArrayAdapter
-import android.widget.ListAdapter
-import android.widget.TextView
-import android.widget.Toast
+import android.view.View
+import android.widget.*
+import android.widget.AdapterView.OnItemSelectedListener
 import com.example.MuseumQuests.QuestInfo.Companion.id_current
 import com.example.MuseumQuests.QuestInfo.Companion.username_current
 import com.google.firebase.database.DataSnapshot
@@ -20,10 +19,11 @@ import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
 import kotlinx.android.synthetic.main.activity_home.*
 import kotlinx.android.synthetic.main.activity_quest_list.*
+import org.intellij.lang.annotations.Language
 import java.util.*
 import kotlin.collections.ArrayList
 
-class Home : AppCompatActivity() {
+class Home : AppCompatActivity(){
     val logTag = "DEMO_TAG"
     var score = 0
     var place = 1
@@ -32,13 +32,42 @@ class Home : AppCompatActivity() {
         setContentView(R.layout.activity_home)
 
         //Кнопка смены языка
-        button_changelanguage.setOnClickListener{
-            val locale = Locale("en")
-            Locale.setDefault(locale)
-            val configuration = Configuration()
-            configuration.locale = locale
-            baseContext.resources.updateConfiguration(configuration, null)
+        var language : String
+
+
+        button_changelanguage.setOnClickListener {
+            if (texthome.text == "HOME") {
+                language = "ru"
+            } else {
+                language = "default"
+            }
+            val locale = Locale(language)
+        Locale.setDefault(locale)
+        val configuration = Configuration()
+        configuration.locale = locale
+        baseContext.resources.updateConfiguration(configuration, null)
+
+            val intent = Intent(this, Home::class.java)
+            startActivity(intent)
         }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
         checkScore()
         checkPlace(0)
@@ -149,6 +178,8 @@ class Home : AppCompatActivity() {
         }
         var new_quest_questions = Array<new_quest_question>(100){new_quest_question(" "," ", Array(4){" "})}
     }
+
+
 }
 
 fun setValByPath (path: String, textWindowId : TextView)
@@ -163,5 +194,9 @@ fun setValByPath (path: String, textWindowId : TextView)
             textWindowId.text = post
         }
     })
+
 }
+
+
+
 
