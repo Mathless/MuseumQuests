@@ -36,14 +36,12 @@
                   android:gravity="center_horizontal"
                   android:id="@+id/username"
                 />
-        <EditText android:layout_width="match_parent" android:layout_height="wrap_content"
-                  android:focusable="true"
-                  android:hint="@string/password"
-                  android:gravity="center_horizontal"
-                  android:id="@+id/password"
-                  android:inputType="textPassword"
-        />
 
+        <EditText android:layout_width="match_parent" android:layout_height="wrap_content"
+                      android:focusable="true"
+                      android:hint="@string/password"
+                      android:gravity="center_horizontal"
+                      android:id="@+id/password"/>
         <Button android:layout_width="match_parent" android:layout_height="wrap_content"
                 android:background="@drawable/button_start"
                 android:text="@string/sign_in"
