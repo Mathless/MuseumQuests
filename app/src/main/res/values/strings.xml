@@ -47,5 +47,9 @@
     <string name="ywgap">You won\'t got any points!</string>
     <string name="cancel">Cancel</string>
     <string name="next">Next</string>
+    <string name="pasdontmatch">Passwords don\'t match</string>
+    <string name="atlest">Username must have at least 4 characters!</string>
+    <string name="passatleast">Password must have at least 4 characters!</string>
+    <string name="alrexi">This username already exists!</string>
 
 </resources>

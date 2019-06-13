@@ -7,14 +7,18 @@
             android:layout_height="wrap_content"
             android:text="Sign Out"
             android:textSize="12sp"
+            android:textColor="#8D000000"
             android:background="@android:color/transparent"
             android:id="@+id/signOut" />
     <Button android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Create quest"
             android:textSize="12sp"
+            android:textColor="#8D000000"
             android:background="@android:color/transparent"
-            android:id="@+id/createNew" android:layout_alignEnd="@+id/llhome"/>
+            android:id="@+id/createNew"
+            android:layout_marginEnd="8dp"
+            android:layout_alignEnd="@+id/llhome"/>
     <LinearLayout android:layout_width="match_parent"
                   android:layout_height="wrap_content"
                   android:orientation="vertical"
@@ -26,28 +30,28 @@
                   android:layout_height="wrap_content"
                   android:text="@string/home"
                   android:id="@+id/texthome"
-                  android:textSize="40sp"
+                  android:textSize="32sp"
                   android:textStyle="bold"
                   android:textColor="@color/black"/>
         <TextView android:layout_width="wrap_content"
                   android:layout_height="wrap_content"
                   android:text=""
                   android:id="@+id/username"
-                  android:textSize="20sp"
+                  android:textSize="16sp"
                   android:textColor="@color/black"/>
         <TextView android:layout_width="match_parent"
                   android:layout_height="wrap_content"
                   android:text="@string/score"
                   android:id="@+id/textscorehome"
                   android:textAlignment="center"
-                  android:textSize="24sp"
+                  android:textSize="16sp"
         />
         <TextView android:layout_width="match_parent"
                   android:layout_height="wrap_content"
                   android:text="@string/place"
                   android:id="@+id/textplacehome"
                   android:textAlignment="center"
-                  android:textSize="24sp"
+                  android:textSize="16sp"
         />
         <Button android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -62,7 +66,7 @@
                   android:id="@+id/textplace"
                   android:textStyle="bold"
                   android:textAlignment="center"
-                  android:textSize="30sp"
+                  android:textSize="16sp"
                   android:textColor="@color/black"/>
     </LinearLayout>
 
@@ -72,9 +76,10 @@
               android:layout_below="@id/llhome"
               android:id="@+id/listofquests"
               android:scrollbars="vertical"
+              android:padding="4dp"
               android:background="@drawable/done_quests_list"
-              android:layout_centerHorizontal="false" android:layout_marginTop="8dp" android:layout_marginStart="8dp"
-              android:layout_marginEnd="8dp" android:layout_marginBottom="8dp"/>
+              android:layout_centerHorizontal="false"
+              android:layout_margin="8dp"/>
 
     <!--</ScrollView>-->
 
@@ -82,7 +87,7 @@
             android:layout_height="wrap_content"
             android:text="@string/start_new_quest"
             android:id="@+id/gotoquestlist"
-            android:textSize="24sp"
+            android:textSize="16sp"
             android:gravity="center"
             android:layout_alignParentBottom="true"
             android:layout_margin="8dp"

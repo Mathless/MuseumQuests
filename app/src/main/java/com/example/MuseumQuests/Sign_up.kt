@@ -26,7 +26,7 @@ class Sign_up : AppCompatActivity() {
                 password_signup1.text.toString() != password_signup2.text.toString() -> {
                     val toast: Toast = Toast.makeText(
                         getApplicationContext(),
-                        "Passwords don't match",
+                        getString(R.string.pasdontmatch),
                         Toast.LENGTH_SHORT
                     )
                     toast.show()
@@ -34,7 +34,7 @@ class Sign_up : AppCompatActivity() {
                 name.length < 4 -> {
                     val toast: Toast = Toast.makeText(
                         getApplicationContext(),
-                        "Username must have at least 4 characters!",
+                        getString(R.string.atlest),
                         Toast.LENGTH_SHORT
                     )
                     toast.show()
@@ -42,7 +42,7 @@ class Sign_up : AppCompatActivity() {
                 password.length < 4 -> {
                     val toast: Toast = Toast.makeText(
                         getApplicationContext(),
-                        "Password must have at least 4 characters!",
+                        getString(R.string.passatleast),
                         Toast.LENGTH_SHORT
                     )
                     toast.show()
@@ -67,7 +67,7 @@ class Sign_up : AppCompatActivity() {
             override fun onDataChange(p0: DataSnapshot) {
                 val post = p0.getValue(String::class.java)
                 if (post.toString() == name)
-                    Toast.makeText(getApplicationContext(),"This username already exists!", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(getApplicationContext(),getString(R.string.alrexi), Toast.LENGTH_SHORT).show()
                 else
                     if (post != null)
                         checkUsername(name, id + 1, password, ctx)

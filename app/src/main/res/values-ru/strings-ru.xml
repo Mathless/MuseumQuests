@@ -41,9 +41,13 @@
     <string name="enter_fourth_answer">Введите четвертый ответ</string>
     <string name="cancel_quest">Отменить создание квеста</string>
     <string name="done">ГОТОВО</string>
-    <string name="quest_name">Quest name</string>
-    <string name="skipthequestion">Skip the question</string>
+    <string name="quest_name">Имя квеста</string>
+    <string name="skipthequestion">Пропустить вопрос</string>
     <string name="ywgap">You won\'t got any points!</string>
-    <string name="cancel">Cancel</string>
+    <string name="cancel">Отменить</string>
     <string name="next">Дальше</string>
+    <string name="pasdontmatch">Пароли не совпвадают</string>
+    <string name="atlest">Имя долнжо состоять как минимум из 4 символов!</string>
+    <string name="passatleast">Пароль должен состоять как минимум из 4 символов!</string>
+    <string name="alrexi">Такое имя пользователя уже существует!</string>
 </resources>
