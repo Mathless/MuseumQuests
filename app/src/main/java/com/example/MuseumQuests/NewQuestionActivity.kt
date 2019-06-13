@@ -40,8 +40,8 @@ class NewQuestionActivity : AppCompatActivity() {
         }
         button_done.setOnClickListener {
             if (criteria) {
-                setData(0, new_quest_questions)
                 addQuestion(new_quest_questions)
+                setData(0, new_quest_questions)
             }
             else {
                 addQuestion(new_quest_questions2)
@@ -59,7 +59,6 @@ class NewQuestionActivity : AppCompatActivity() {
             }
             else {
                 criteria = false
-                size = 0
                 val intent = Intent(this, NewQuestActivity::class.java)
                 Toast.makeText(getApplicationContext(),"Translate the quest now!", Toast.LENGTH_LONG).show()
 
@@ -87,14 +86,12 @@ class NewQuestionActivity : AppCompatActivity() {
             questionanswer2.hint = new_quest_questions[k].answer_options[1]
             questionanswer3.hint = new_quest_questions[k].answer_options[2]
             questionanswer4.hint = new_quest_questions[k].answer_options[3]
-            for (i in 0..3)
-                if (new_quest_questions[k].correct_answer == new_quest_questions[k].answer_options[i])
-                    when {
-                        i == 0 -> correctanswer1.isChecked = true
-                        i == 1 -> correctanswer2.isChecked = true
-                        i == 2 -> correctanswer3.isChecked = true
-                        i == 3 -> correctanswer4.isChecked = true
-                    }
+            when {
+                new_quest_questions[k].correct_answer == new_quest_questions[k].answer_options[0] -> correctanswer1.isChecked = true
+                new_quest_questions[k].correct_answer == new_quest_questions[k].answer_options[1] -> correctanswer2.isChecked = true
+                new_quest_questions[k].correct_answer == new_quest_questions[k].answer_options[2] -> correctanswer3.isChecked = true
+                new_quest_questions[k].correct_answer == new_quest_questions[k].answer_options[3] -> correctanswer4.isChecked = true
+            }
             k++
         }
 
@@ -116,6 +113,8 @@ class NewQuestionActivity : AppCompatActivity() {
                     root1.child("title").setValue(new_quest_title).addOnCompleteListener {}
                     root1.child("description").setValue(new_quest_description).addOnCompleteListener {}
 
+                    println("SIZE: $size")
+
                     for (i in 0..size) {
                         if (new_quest_questions[i].question != "" && new_quest_questions[i].question != " ") {
                             for (j in 0..3)
@@ -128,6 +127,7 @@ class NewQuestionActivity : AppCompatActivity() {
                                 .setValue(new_quest_questions[i].question).addOnCompleteListener {}
                         }
                     }
+                    size = 0
                 }
             }
 
