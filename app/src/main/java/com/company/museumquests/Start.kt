@@ -177,6 +177,7 @@ class DownloadImageFromInternet(internal var imageView: ImageView) :
     }
 
     override fun onPostExecute(result: Bitmap) {
-        imageView.setImageBitmap(result)
+        if (result != null)
+            imageView.setImageBitmap(result)
     }
 }
