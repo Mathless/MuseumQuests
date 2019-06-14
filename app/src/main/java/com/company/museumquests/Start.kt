@@ -2,6 +2,9 @@ package com.company.museumquests
 
 import android.content.Intent
 import android.content.res.Configuration
+import android.graphics.Bitmap
+import android.graphics.BitmapFactory
+import android.os.AsyncTask
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.util.DisplayMetrics
@@ -16,6 +19,7 @@ import com.google.firebase.database.ValueEventListener
 import kotlinx.android.synthetic.main.activity_start.*
 import java.util.*
 import android.text.InputType
+import android.util.Log
 import android.widget.EditText
 import com.company.museumquests.R
 import com.company.museumquests.Sign_up
@@ -153,3 +157,26 @@ class Sas(private val password: EditText) : GestureDetector.SimpleOnGestureListe
         TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
     }
 }*/
+
+class DownloadImageFromInternet(internal var imageView: ImageView) :
+    AsyncTask<String, Void, Bitmap>() {
+
+    override fun doInBackground(vararg urls: String): Bitmap? {
+        val imageURL = urls[0]
+        var bimage: Bitmap? = null
+        try {
+            val `in` = java.net.URL(imageURL).openStream()
+            bimage = BitmapFactory.decodeStream(`in`)
+
+        } catch (e: Exception) {
+            Log.e("Error Message", e.message)
+            e.printStackTrace()
+        }
+
+        return bimage
+    }
+
+    override fun onPostExecute(result: Bitmap) {
+        imageView.setImageBitmap(result)
+    }
+}

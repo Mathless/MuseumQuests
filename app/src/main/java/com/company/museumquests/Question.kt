@@ -2,13 +2,10 @@ package com.company.museumquests
 
 import android.content.Context
 import android.content.Intent
+import android.graphics.BitmapFactory
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.support.v7.app.AlertDialog
-import android.widget.ArrayAdapter
-import android.widget.ListAdapter
-import android.widget.ListView
-import android.widget.TextView
 import com.company.museumquests.QuestInfo.Companion.maxPoints
 import com.company.museumquests.QuestInfo.Companion.pathQuests
 import com.company.museumquests.QuestInfo.Companion.totalPoints
@@ -17,6 +14,12 @@ import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
 import kotlinx.android.synthetic.main.activity_question.*
+import java.net.URL
+import android.graphics.Bitmap
+import android.os.AsyncTask
+import android.util.Log
+import android.widget.*
+
 
 class Question : AppCompatActivity() {
 
@@ -80,6 +83,8 @@ class Question : AppCompatActivity() {
             val dialog: AlertDialog = builder.create()
             dialog.show()
         }
+
+        setImage("museums/quests/$i/questions/$j/image")
     }
 
     fun checkWhereToGo(i : Int, j : Int) {
@@ -163,6 +168,25 @@ class Question : AppCompatActivity() {
                         text_list.getChildAt(idClicked).setBackgroundResource(R.drawable.rectangle_warning)
                         text_list.getChildAt(k).setBackgroundResource(R.drawable.rectangle_correct)
                     }
+                }
+            }
+        })
+    }
+
+    fun setImage(path : String) {
+        val rootRef = FirebaseDatabase.getInstance().getReference(path)
+        rootRef.addValueEventListener(object : ValueEventListener {
+            override fun onCancelled(p0: DatabaseError) {
+                println("not implemented")
+            }
+
+            override fun onDataChange(p0: DataSnapshot) {
+                val post = p0.getValue(String::class.java)
+
+                if (post != null) {
+                    DownloadImageFromInternet(imageView as ImageView)
+                        .execute(post.toString())
+                    println(post.toString())
                 }
             }
         })
