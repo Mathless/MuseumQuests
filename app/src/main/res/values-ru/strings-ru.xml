@@ -43,7 +43,7 @@
     <string name="done">ГОТОВО</string>
     <string name="quest_name">Имя квеста</string>
     <string name="skipthequestion">Пропустить вопрос</string>
-    <string name="ywgap">You won\'t get any points!</string>
+    <string name="ywgap">Вы не получите очков!</string>
     <string name="cancel">Отменить</string>
     <string name="next">Дальше</string>
     <string name="pasdontmatch">Пароли не совпвадают</string>
@@ -59,7 +59,7 @@
     <string name="usernam">Имя:</string>
     <string name="so">Выйти</string>
     <string name="arusur">Вы уверены, что хотите выйти?</string>
-    <string name="donthavepermis">У вас нету прав для этого!\nЕсли вы хотите стать создателем квестов,\n то напишите нам на mrkalumba@gmail.com
+    <string name="donthavepermis">У вас нет прав для этого!\nЕсли вы хотите стать создателем квестов,\nто напишите нам на mrkalumba@gmail.com
     </string>
-    <string name="gotand">Вы уже прошли этот квест!\n поэтому вы не получаете за него очков.</string>
+    <string name="gotand">Вы уже прошли этот квест,\nпоэтому вы не получаете очков за него.</string>
 </resources>

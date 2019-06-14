@@ -20,6 +20,7 @@ class QuestInfo : AppCompatActivity() {
         var id_current : Int = -1
         var points_current : Int = -1
         var totalPoints = 0
+        var maxPoints = 0
         var questTitle = " "
         var questTitle_en = " "
         var language = "default"
@@ -60,6 +61,7 @@ class QuestInfo : AppCompatActivity() {
         //printAll(0)
         //Переход к вопросам, т.е. к самому квесту
             button_start.setOnClickListener {
+                maxPoints = 0
                 val intent = Intent(this, Question::class.java)
                 intent.putExtra(KEY_QUEST_NUM, i)
                 intent.putExtra(KEY_QUESTION_NUM, 0)

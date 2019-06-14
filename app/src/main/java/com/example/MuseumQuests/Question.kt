@@ -9,6 +9,7 @@ import android.widget.ArrayAdapter
 import android.widget.ListAdapter
 import android.widget.ListView
 import android.widget.TextView
+import com.example.MuseumQuests.QuestInfo.Companion.maxPoints
 import com.example.MuseumQuests.QuestInfo.Companion.pathQuests
 import com.example.MuseumQuests.QuestInfo.Companion.totalPoints
 import com.google.firebase.database.DataSnapshot
@@ -26,6 +27,7 @@ class Question : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_question)
 
+        maxPoints += 10
         var answerGiven : String = " "
         var idClicked : Int = 0
         var isChecked : Boolean = false

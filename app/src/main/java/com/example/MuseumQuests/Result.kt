@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
 import com.example.MuseumQuests.QuestInfo.Companion.id_current
+import com.example.MuseumQuests.QuestInfo.Companion.maxPoints
 import com.example.MuseumQuests.QuestInfo.Companion.questTitle
 import com.example.MuseumQuests.QuestInfo.Companion.questTitle_en
 import com.example.MuseumQuests.QuestInfo.Companion.totalPoints
@@ -22,7 +23,7 @@ class Result : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_result)
-        textscore.text = getString(R.string.score11)+ ": $totalPoints"
+        textscore.text = getString(R.string.score11)+ ": $totalPoints / $maxPoints"
 
         setPassedQuest(0)
 
