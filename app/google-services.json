@@ -8,6 +8,35 @@
   "client": [
     {
       "client_info": {
+        "mobilesdk_app_id": "1:954143487503:android:aefc99745ba447bc",
+        "android_client_info": {
+          "package_name": "com.company.museumquests"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "954143487503-7tik96vnsphhs40ap42gm9jvpevh98ra.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBUDvtBSrnWZVPXyfoqUn30zwG4qHQqcxo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "954143487503-7tik96vnsphhs40ap42gm9jvpevh98ra.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
         "mobilesdk_app_id": "1:954143487503:android:5a224d14d372dd97",
         "android_client_info": {
           "package_name": "com.example.MuseumQuests"

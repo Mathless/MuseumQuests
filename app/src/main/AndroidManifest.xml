@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-          package="com.example.MuseumQuests">
+          package="com.company.museumquests">
 
     <application
             android:allowBackup="true"
@@ -11,12 +11,12 @@
             android:theme="@style/AppTheme">
         <activity
                 android:screenOrientation="portrait"
-                android:name=".NewQuestionActivity"
+                android:name="com.company.museumquests.NewQuestionActivity"
                 android:theme="@style/AppTheme.NoActionBar">
         </activity>
         <activity
                 android:screenOrientation="portrait"
-                android:name=".NewQuestActivity"
+                android:name="com.company.museumquests.NewQuestActivity"
                 android:theme="@style/AppTheme.NoActionBar">
         </activity>
         <activity
@@ -28,11 +28,11 @@
         </activity>
         <activity android:screenOrientation="portrait" android:name=".Question">
         </activity>
-        <activity android:screenOrientation="portrait" android:name=".QuestInfo">
+        <activity android:screenOrientation="portrait" android:name="com.company.museumquests.QuestInfo">
         </activity>
         <activity  android:screenOrientation="portrait" android:name=".QuestList">
         </activity>
-        <activity android:screenOrientation="portrait" android:name=".Home">
+        <activity android:screenOrientation="portrait" android:name="com.company.museumquests.Home">
         </activity>
         <activity android:screenOrientation="portrait" android:name=".Start">
             <intent-filter>
