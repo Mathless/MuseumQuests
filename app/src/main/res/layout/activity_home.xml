@@ -92,6 +92,7 @@
             android:layout_alignParentBottom="true"
             android:layout_margin="8dp"
             android:background="@drawable/button_start"
-            android:layout_centerHorizontal="true" android:textColor="@color/black"/>
+            android:layout_centerHorizontal="true" android:textColor="@color/black"
+            />
 
 </RelativeLayout>

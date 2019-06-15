@@ -66,10 +66,11 @@
             android:layout_centerHorizontal="true"
             android:layout_gravity="center_horizontal"
             android:id="@+id/button_start"
+
             android:layout_margin="16dp"
             android:background="@drawable/button_start"
             android:layout_alignParentBottom="true"
-            android:textSize="24sp" android:textColor="@color/black" android:layout_marginTop="10dp"
+            android:textSize="24sp" android:textColor="@color/white" android:layout_marginTop="10dp"
             android:layout_marginStart="10dp" android:layout_marginEnd="10dp" android:layout_marginBottom="10dp"/>
 
 
