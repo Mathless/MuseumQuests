@@ -5,7 +5,11 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context=".Question">
-
+<LinearLayout android:layout_width="match_parent" android:layout_height="match_parent"
+android:layout_above="@id/button_layout"
+android:orientation="vertical"
+android:gravity="center"
+android:padding="8dp">
     <TextView
             android:text=""
             android:layout_width="wrap_content"
@@ -27,6 +31,13 @@
             android:textColor="@color/black"
             android:layout_alignParentEnd="true" android:layout_marginTop="8dp" android:layout_marginStart="8dp"
             android:layout_marginEnd="8dp" android:layout_marginBottom="8dp"/>
+    <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:maxHeight="250dp"
+            android:maxWidth="400dp" tools:srcCompat="@tools:sample/avatars" android:id="@+id/imageView"
+        />
+</LinearLayout>
     <RelativeLayout android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:id="@+id/button_layout"
@@ -47,9 +58,5 @@
                 android:layout_alignParentEnd="true"
                 android:textSize="24sp"/>
     </RelativeLayout>
-    <ImageView
-            android:layout_width="300dp"
-            android:layout_height="210dp" tools:srcCompat="@tools:sample/avatars" android:id="@+id/imageView"
-            android:layout_marginEnd="-348dp" android:layout_toStartOf="@+id/text_list"
-            android:layout_marginBottom="64dp" android:layout_alignBottom="@+id/button_layout"/>
+
 </RelativeLayout>
