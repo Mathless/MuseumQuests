@@ -2,6 +2,7 @@ package com.company.museumquests
 
 import android.content.Context
 import android.content.Intent
+import android.content.res.Resources
 import android.graphics.BitmapFactory
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
@@ -18,6 +19,7 @@ import java.net.URL
 import android.graphics.Bitmap
 import android.os.AsyncTask
 import android.util.Log
+import android.util.TypedValue
 import android.widget.*
 
 
@@ -28,6 +30,8 @@ class Question : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_question)
+
+
 
         maxPoints += 10
         var answerGiven : String = " "
@@ -85,6 +89,8 @@ class Question : AppCompatActivity() {
         }
 
         setImage("museums/quests/$i/questions/$j/image")
+
+
     }
 
     fun checkWhereToGo(i : Int, j : Int) {

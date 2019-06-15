@@ -23,6 +23,7 @@ import com.google.firebase.database.ValueEventListener
 import kotlinx.android.synthetic.main.activity_home.*
 import java.util.*
 
+@Suppress("DEPRECATION")
 class Home : AppCompatActivity(){
     val logTag = "DEMO_TAG"
     var score = 0
