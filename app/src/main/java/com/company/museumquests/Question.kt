@@ -22,7 +22,6 @@ import android.util.Log
 import android.util.TypedValue
 import android.widget.*
 
-
 class Question : AppCompatActivity() {
 
     override fun onBackPressed() {}
@@ -30,7 +29,6 @@ class Question : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_question)
-
 
 
         maxPoints += 10
@@ -58,12 +56,14 @@ class Question : AppCompatActivity() {
         }
 
         //Проверка вопроса или переход на окно результата
-        button_check.setOnClickListener{
+        button_check.setOnClickListener {
             if (isChecked)
                 checkWhereToGo(i, j)
-            else if (answerGiven == " ")
-                for(k in 0..3)
-                    text_list.getChildAt(k).setBackgroundResource(R.drawable.rectangle_warning)
+            else if (answerGiven == " ") {
+                if (text_list.getChildAt(0) != null)
+                    for (k in 0..3)
+                        text_list.getChildAt(k).setBackgroundResource(R.drawable.rectangle_warning)
+            }
             else {
                 showRightAnswer("museums/$pathQuests/$i/questions/$j/correct_answer", text_list, idClicked)
                 checkAnswer(answerGiven, 10, "museums/$pathQuests/$i/questions/$j/correct_answer")
@@ -71,7 +71,6 @@ class Question : AppCompatActivity() {
                 button_check.text = getString(R.string.next)
                 button_skip.isEnabled = false
                 button_skip.setBackgroundColor(0)
-
             }
         }
 
@@ -170,10 +169,11 @@ class Question : AppCompatActivity() {
             override fun onDataChange(p0: DataSnapshot) {
                 val post = p0.getValue(String::class.java)
                 for (k in 0..3) {
-                    if ( (text_list.getChildAt(k) as TextView).text == post) {
-                        text_list.getChildAt(idClicked).setBackgroundResource(R.drawable.rectangle_warning)
-                        text_list.getChildAt(k).setBackgroundResource(R.drawable.rectangle_correct)
-                    }
+                    if (text_list.getChildAt(idClicked) != null && text_list.getChildAt(k) != null)
+                        if ( (text_list.getChildAt(k) as TextView).text == post) {
+                            text_list.getChildAt(idClicked).setBackgroundResource(R.drawable.rectangle_warning)
+                            text_list.getChildAt(k).setBackgroundResource(R.drawable.rectangle_correct)
+                        }
                 }
             }
         })
