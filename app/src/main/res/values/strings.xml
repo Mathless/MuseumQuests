@@ -64,5 +64,7 @@
         email
     </string>
     <string name="gotand">You have already passed this quest!\nYou will not gain any points</string>
+    <string name="add_image">Add Image</string>
+    <string name="to_add_image_give_image_url">Add image url</string>
 
 </resources>

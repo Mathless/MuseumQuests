@@ -1,5 +1,6 @@
 package com.company.museumquests
 
+import android.Manifest
 import android.content.Intent
 import android.os.Bundle
 import android.support.v7.app.AlertDialog
@@ -21,6 +22,11 @@ import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
 
 import kotlinx.android.synthetic.main.activity_new_question.*
+import android.app.Activity
+import android.content.pm.PackageManager
+import android.support.v4.content.ContextCompat
+import com.company.museumquests.NewQuestionActivity as NewQuestionActivity
+
 
 class NewQuestionActivity : AppCompatActivity() {
 
@@ -29,6 +35,15 @@ class NewQuestionActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_new_question)
+
+
+
+
+
+
+
+
+
 
         button_makequestion2.setOnClickListener {
             if (criteria)
@@ -156,5 +171,7 @@ class NewQuestionActivity : AppCompatActivity() {
         new_quest_questions[size].correct_answer = correct
         size++
     }
+
+
 
 }

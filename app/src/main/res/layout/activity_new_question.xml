@@ -14,17 +14,8 @@
                   android:padding="8dp"
                   android:descendantFocusability="beforeDescendants"
                   android:focusableInTouchMode="true">
-        <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="100dp"
-                android:id="@+id/imageViewa"
-                android:src="@drawable/mueseum"/>
-        <TextView android:layout_width="match_parent"
-                  android:layout_height="wrap_content"
-                  android:text="@string/your_question"
-                  android:gravity="center"
-                  android:textSize="16sp"
-        />
+
+
         <EditText android:layout_width="match_parent" android:layout_height="wrap_content"
                   android:focusable="true"
                   android:hint="@string/enter_question"
@@ -95,6 +86,7 @@
                           android:id="@+id/questionanswer4"/>
             </LinearLayout>
         </LinearLayout>
+
         <TextView android:layout_width="match_parent"
                   android:layout_height="wrap_content"
                   android:text="@string/check_your_inputs"
@@ -111,6 +103,25 @@
                 android:textSize="16sp"
                 android:gravity="center"
         />
+
+
+        <EditText android:layout_width="match_parent" android:layout_height="wrap_content"
+                  android:focusable="true"
+                  android:hint="@string/to_add_image_give_image_url"
+                  android:gravity="center_horizontal"
+                  android:layout_margin="10dp"
+                  android:id="@+id/imageurl"/>
+        <Button android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/button_start"
+                android:layout_marginVertical="16dp"
+                android:text="@string/add_image"
+                android:textColor="#FFFFFF"
+                android:id="@+id/button_add_image"
+                android:textSize="16sp"
+                android:gravity="center"
+        />
+
         <Button android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/button_start"
@@ -121,6 +132,7 @@
                 android:textSize="16sp"
                 android:gravity="center"
         />
+
         <Button android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/change_language_button"

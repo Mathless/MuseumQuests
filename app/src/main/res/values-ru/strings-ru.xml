@@ -62,4 +62,7 @@
     <string name="donthavepermis">У вас нет прав для этого!\nЕсли вы хотите стать создателем квестов,\nто напишите нам на mrkalumba@gmail.com
     </string>
     <string name="gotand">Вы уже прошли этот квест,\nпоэтому вы не получаете очков за него.</string>
+    <string name="add_image">Добавить Изображение</string>
+
+    <string name="to_add_image_give_image_url">Напишите ссылку на картинку</string>
 </resources>
