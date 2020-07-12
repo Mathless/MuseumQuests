@@ -2,7 +2,8 @@
 <resources>
     <color name="colorPrimary">#008577</color>
     <color name="colorPrimaryDark">#00574B</color>
-    <color name="colorAccent">#00BFA5</color>
+    <color name="colorPrimaryLight">#3dccc7</color>
+    <color name="colorAccent">#009688</color>
     <color name="colorAppTitles">#000000</color>
     <color name="black">#000000</color>
     <color name="bordersColor">#D81B1B</color>
