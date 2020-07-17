@@ -28,6 +28,7 @@
             android:layout_height="225dp"
             android:id="@+id/text_list"
             android:textColor="@color/black"
+
     />
     <ImageView
             android:layout_below="@id/text_list"

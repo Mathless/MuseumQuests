@@ -49,7 +49,7 @@ class Question : AppCompatActivity() {
                 for (k in 0..3)
                     text_list.getChildAt(k).setBackgroundResource(R.drawable.rectangle)
                 val value = (view as TextView).text.toString()
-                view.setBackgroundResource(R.drawable.done_quests_list)
+                view.setBackgroundResource(R.drawable.change_language_button)
                 answerGiven = value
                 idClicked = index
             }

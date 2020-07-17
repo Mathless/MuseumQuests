@@ -77,6 +77,7 @@
               android:id="@+id/listofquests"
               android:scrollbars="vertical"
               android:padding="4dp"
+              android:listSelector="@android:color/transparent"
               android:background="@drawable/done_quests_list"
               android:layout_centerHorizontal="false"
               android:layout_margin="8dp"/>
